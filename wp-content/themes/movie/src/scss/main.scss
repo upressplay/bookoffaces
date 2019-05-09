@@ -1,0 +1,22 @@
+/**
+ * Import SASS 
+ * Combining files into one, adds them in sequence
+ */
+
+@import "base/variables";
+@import "base/mixins";
+@import "base/imports";
+@import "base/keyframes";
+
+@import "base/global";
+
+@import "site/site";
+@import "site/nav";
+@import "site/home";
+@import "site/page";
+@import "site/photos";
+@import "site/schedule";
+@import "site/headlines";
+@import "site/gallery";
+@import "site/overlay";
+@import "site/footer";

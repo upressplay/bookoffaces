@@ -1,0 +1,46 @@
+/**
+ * Imports
+ * Add external files into combined sass file
+ */
+
+// Google Fonts
+// @import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+// @import url("//fonts.googleapis.com/css?family=Homemade+Apple");
+
+@font-face {
+    font-family: 'lorabold';
+    src: url('../fonts/lora-bold-webfont.woff2') format('woff2'),
+         url('../fonts/lora-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'lorabold_italic';
+    src: url('../fonts/lora-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/lora-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'loraitalic';
+    src: url('../fonts/lora-italic-webfont.woff2') format('woff2'),
+         url('../fonts/lora-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'loraregular';
+    src: url('../fonts/lora-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lora-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+// Font Awesome
+@import url("//use.fontawesome.com/releases/v5.7.2/css/all.css");

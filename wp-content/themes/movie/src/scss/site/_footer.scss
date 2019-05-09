@@ -1,0 +1,86 @@
+#footer {
+
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color:#fff;
+    background-color: $color-blue;
+    font-size: rem(18,$text-bp-sm);
+
+    @include bp-medium {
+        flex-direction:row;
+        justify-content: space-between;
+        font-size: rem(12,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(12,$text-bp-lg);
+    }
+    #copyright,
+    .social-nav {
+        margin: rem(10,$text-bp-sm) rem(120,$text-bp-sm);  
+        @include bp-medium {
+            margin: rem(8,$text-bp-md) rem(96,$text-bp-md);  
+        }
+
+        @include bp-large {
+            margin: rem(10,$text-bp-lg) rem(120,$text-bp-lg);  
+        }   
+    }
+}
+
+#footer a:link {
+    color: #b6b6b6;
+    text-decoration: none;
+
+    @include bp-medium {
+      color: #b6b6b6;
+    }
+
+    @include bp-large {
+      color: #b6b6b6;
+    }
+}
+
+#footer a:visited {
+    color: #b6b6b6;
+    text-decoration: none;
+
+    @include bp-medium {
+      color: #b6b6b6;
+    }
+
+    @include bp-large {
+      color: #b6b6b6;
+    }
+}
+
+#footer a:hover {
+    color: #FFF;
+    text-decoration: underline;
+
+    @include bp-medium {
+      color: #FFF;
+    }
+
+    @include bp-large {
+      color: #FFF;
+    }
+}
+
+#footer a:active {
+    color: #b6b6b6;
+    text-decoration: none;
+
+    @include bp-medium {
+      color: #b6b6b6;
+    }
+
+    @include bp-large {
+      color: #b6b6b6;
+    }
+}
+
+

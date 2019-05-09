@@ -1,0 +1,207 @@
+nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width:rem(750,$text-bp-sm);
+    @include bp-medium {
+        width:rem(1270,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(1600,$text-bp-lg);
+    }
+}
+#menu-btn {
+    color: $color-yellow;
+    position: absolute;
+    right: rem(50,$text-bp-sm);
+    top: rem(120,$text-bp-sm);
+    z-index: 20;
+
+    font-size: rem(60,$text-bp-sm);
+
+}
+#menu-close-btn {
+    position: absolute;
+    color: $color-yellow;
+    right: rem(52,$text-bp-sm);
+    top: rem(115,$text-bp-sm);
+    z-index: 22;
+
+    font-size: rem(70,$text-bp-sm);    
+}
+.nav-logo {
+    z-index: 1003;
+    width:rem(380,$text-bp-sm);
+    height:rem(180 ,$text-bp-sm);
+    margin: rem(50,$text-bp-sm) 0 rem(100,$text-bp-sm) 0;
+
+    @include bp-medium {
+        width:rem(300,$text-bp-md);
+        height:rem(140,$text-bp-md);
+        margin: rem(60,$text-bp-md) 0;
+    }
+
+    @include bp-large {
+        width:rem(380,$text-bp-lg);
+        height:rem(175,$text-bp-lg);
+        margin: rem(60,$text-bp-lg) 0;
+    }
+}
+.nav-logo img {
+  width:100%;
+  height:auto;
+}
+
+#nav-btns {
+    position: fixed;
+    z-index: 21;
+    left:0;
+    top:0;
+    background-color: #000;
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    overflow: hidden;
+    height:0;
+
+    @include bp-medium {
+        position: static;
+        background-color: transparent;
+        position: static;
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+        height:auto;
+    }
+    &.active {
+        width: 100vw;
+        height: 100vh;
+
+        @include bp-medium {
+            height:0;
+        }
+
+        @include bp-large {
+            height:0;
+        }
+    }   
+}
+
+
+
+.social-nav {
+    text-align: center;
+    flex-direction: row;
+    
+    @include bp-medium {
+    }
+
+    @include bp-large {
+    }
+}
+
+.nav-btn {
+    text-align: center;
+    font-family: $nav-font;
+    text-transform: uppercase;
+    color: #fff;
+
+    font-size: rem(60,$text-bp-sm);
+    line-height: rem(72,$text-bp-sm);
+    margin: rem(25,$text-bp-sm) 0;
+
+    @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(24,$text-bp-md);
+        margin: 0 rem(25,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(24,$text-bp-lg);
+        line-height: rem(30,$text-bp-lg);
+        margin: 0 rem(25,$text-bp-lg);
+    }
+}
+
+.nav-btn:link {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-btn:visited {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-btn:hover {
+    color: $color-yellow;
+    text-decoration: none;
+}
+
+
+.social-btn {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fbf1e3;
+    font-size: rem(50,$text-bp-sm);
+    padding: rem(25,$text-bp-sm) rem(25,$text-bp-sm);
+
+    @include bp-medium {
+        font-size: rem(27,$text-bp-md);
+        padding: rem(20,$text-bp-md) rem(10,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(27,$text-bp-lg);
+        padding: rem(20,$text-bp-lg) rem(10,$text-bp-lg);
+    }
+}
+
+.social-btn:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+#scroll-up {
+    color: #fff;
+    position: fixed;
+    right: rem(50,$text-bp-sm);
+    bottom: rem(-50,$text-bp-sm);
+    z-index: 20;
+
+    font-size: rem(60,$text-bp-sm);  
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease-in-out;
+    
+    @include bp-medium {
+        font-size: rem(36,$text-bp-md);
+        right: rem(40,$text-bp-md);
+        bottom: rem(-50,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(36,$text-bp-lg);
+        right: rem(40,$text-bp-lg);
+        bottom: rem(-50,$text-bp-lg);
+    } 
+
+    &.active {
+        opacity:1;
+        bottom: rem(50,$text-bp-sm);
+
+        transition: opacity 0.5s ease-in-out;
+
+        @include bp-medium {
+            bottom: rem(30,$text-bp-md);
+        }
+
+        @include bp-large {
+            bottom: rem(30,$text-bp-lg);
+        }
+    } 
+}
+

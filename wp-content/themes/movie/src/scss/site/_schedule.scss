@@ -1,0 +1,160 @@
+#schedule {
+
+    background-image: none;
+    background-size: 100% auto;
+    background-position: top left;
+
+    min-height: auto; 
+    padding: rem(60,$text-bp-sm);
+
+    @include bp-medium {
+        background-image: url(../img/schedule_background-d.jpg);
+        min-height: rem(890,$text-bp-md); 
+        padding: rem(15,$text-bp-md) rem(15,$text-bp-md) rem(15,$text-bp-md) rem(600,$text-bp-lg);
+    }
+    @include bp-large {
+        min-height: rem(1200,$text-bp-lg); 
+        padding: rem(20,$text-bp-lg) rem(20,$text-bp-lg) rem(20,$text-bp-lg) rem(800,$text-bp-lg); 
+    } 
+
+    .schedule-thumbs {
+        display: flex;
+        flex-direction:column;
+        flex-wrap: no-wrap;
+        justify-content: flex-end;  
+        
+    }
+    
+}
+
+#schedule-more {
+    margin-left:rem(360,$text-bp-sm);
+
+    @include bp-medium {
+         margin-left:rem(340,$text-bp-md);
+    }
+
+    @include bp-large {
+        margin-left:rem(440,$text-bp-lg);
+    }   
+}
+
+.thumb-schedule {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+
+    margin: 0 0 rem(40,$text-bp-sm) 0;
+
+    @include bp-medium {
+        margin:rem(5,$text-bp-md) rem(5,$text-bp-md) rem(32,$text-bp-md) rem(5,$text-bp-md);
+    }
+    @include bp-large {
+        margin:rem(5,$text-bp-lg) rem(40,$text-bp-lg) rem(35,$text-bp-lg) rem(0,$text-bp-lg);
+    }
+    
+    .info {
+        display: flex;
+        flex-direction:column;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+
+        width:rem(365,$text-bp-sm);
+
+        @include bp-medium {
+             width:rem(340,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(440,$text-bp-lg);
+        }
+        .date-time {
+            font-size:rem(36,$text-bp-sm);
+            line-height:rem(40,$text-bp-sm);
+            margin-bottom:rem(10,$text-bp-sm);
+
+            @include bp-medium {
+                font-size:rem(34,$text-bp-md);
+                line-height:rem(40,$text-bp-md);
+                margin-bottom:rem(20,$text-bp-md);
+            }
+
+            @include bp-large {
+                font-size:rem(42,$text-bp-lg);
+                line-height:rem(48,$text-bp-lg);
+                margin-bottom:rem(10,$text-bp-lg);
+            }  
+        }
+        .venue-city {
+            .venue {
+                font-size:rem(26,$text-bp-sm);
+                line-height:rem(30,$text-bp-sm);
+                margin-bottom:rem(5,$text-bp-sm);
+
+                @include bp-medium {
+                    font-size:rem(17,$text-bp-md);
+                    line-height:rem(21,$text-bp-md);
+                    margin-bottom:rem(5,$text-bp-md);
+                }
+
+                @include bp-large {
+                    font-size:rem(25,$text-bp-lg);
+                    line-height:rem(30,$text-bp-lg);
+                    margin-bottom:rem(5,$text-bp-lg);
+                }  
+            }
+            .city {
+                font-size:rem(22,$text-bp-sm);
+                line-height:rem(26,$text-bp-sm);
+                margin-bottom:rem(5,$text-bp-sm);
+                @include bp-medium {
+                    font-size:rem(14,$text-bp-md);
+                    line-height:rem(18,$text-bp-md);
+                    margin-bottom:rem(5,$text-bp-md);
+                }
+
+                @include bp-large {
+                    font-size:rem(14,$text-bp-lg);
+                    line-height:rem(18,$text-bp-lg);
+                    margin-bottom:rem(5,$text-bp-lg);
+                }       
+            }
+        }
+        
+
+    }
+    
+}
+
+.tickets-btn {
+    text-align: center;
+    display: inline-block;
+    font-family: $nav-font;
+    color:#000;
+    background-color: #fff;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out; 
+
+    font-size:rem(22,$text-bp-sm);
+    letter-spacing: rem(2,$text-bp-sm);
+    padding:rem(20,$text-bp-sm) 0;
+    width: rem(244,$text-bp-sm); 
+
+    @include bp-medium {
+        font-size:rem(12,$text-bp-md);
+        letter-spacing: rem(2,$text-bp-md);
+        padding:rem(10,$text-bp-md) 0;
+        width: rem(175,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size:rem(15,$text-bp-lg);
+        letter-spacing: rem(2,$text-bp-lg);
+        padding:rem(10,$text-bp-lg) 0;
+        width: rem(175,$text-bp-lg);
+    }   
+}
+.tickets-btn:hover {
+    background-color: $color-yellow;    
+}

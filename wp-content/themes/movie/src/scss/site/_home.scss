@@ -1,0 +1,242 @@
+header,
+#background,
+#background-light {
+
+
+
+    width: rem(750,$text-bp-sm);
+    height: rem(780,$text-bp-sm);
+
+    @include bp-medium {
+        
+        width: rem(1270,$text-bp-md);
+        height: rem(800,$text-bp-md);
+    }
+
+    @include bp-large {
+        width: rem(1600,$text-bp-lg);
+        height: rem(1020,$text-bp-lg);
+    }
+    &.category {
+        height: rem(290,$text-bp-sm);
+
+        @include bp-medium {
+            height: rem(300,$text-bp-md);
+        }
+
+        @include bp-large {
+            height: rem(300,$text-bp-lg);
+        }
+    }
+
+
+}
+header {
+    position: relative;
+    background-image: url(../img/schedule_background-d.jpg);
+    background-size: 100% auto;
+    background-position: 0 rem(220,$text-bp-sm);
+    background-repeat: no-repeat;
+    @include bp-medium {
+        background: none;
+    }
+}
+#background {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    &.active {
+        opacity: 1;
+    }
+    
+}
+#background-light {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 2s ease-in-out 2s;
+    &.active {
+        opacity: 1;
+    }
+    
+}
+#latest {
+    position: absolute;
+    width: 100%;
+    left:0;
+    top: rem(360,$text-bp-sm);
+
+    @include bp-medium {
+        top: rem(420,$text-bp-md);
+    }
+
+    @include bp-large {
+        top: rem(550,$text-bp-lg);
+    }
+    text-align: center;
+    > .sub,
+    > .city {
+        font-size: rem(22,$text-bp-sm);
+        line-height: rem(28,$text-bp-sm);
+        margin: rem(15,$text-bp-sm) 0;
+
+        @include bp-medium {
+            font-size: rem(14,$text-bp-md);
+            line-height: rem(18,$text-bp-md);
+            margin: rem(15,$text-bp-md) 0;
+        }
+
+        @include bp-large {
+            font-size: rem(14,$text-bp-lg);
+            line-height: rem(18,$text-bp-lg);
+            margin:rem(15,$text-bp-lg) 0;
+        }
+    }
+    > .title {
+        font-size: rem(60,$text-bp-sm);
+        line-height: rem(70,$text-bp-sm);
+        margin: rem(15,$text-bp-sm) 0;
+
+        @include bp-medium {
+            font-size: rem(60,$text-bp-md);
+            line-height: rem(70,$text-bp-md);
+            margin: rem(15,$text-bp-md) 0;
+        }
+
+        @include bp-large {
+            font-size: rem(60,$text-bp-lg);
+            line-height: rem(70,$text-bp-lg);
+            margin:rem(15,$text-bp-lg) 0;
+        }
+    }
+    > .venue {
+        font-size: rem(36,$text-bp-sm);
+        line-height: rem(40,$text-bp-sm);
+        margin: rem(15,$text-bp-sm) 0;
+
+        @include bp-medium {
+            font-size: rem(25,$text-bp-md);
+            line-height: rem(30,$text-bp-md);
+            margin: rem(15,$text-bp-md) 0;
+        }
+
+        @include bp-large {
+            font-size: rem(25,$text-bp-lg);
+            line-height: rem(30,$text-bp-lg);
+            margin:rem(15,$text-bp-lg) 0;
+        }
+    }
+
+}
+#latest-btn {
+    margin: rem(15,$text-bp-sm) 0;
+
+    @include bp-medium {
+        margin: rem(15,$text-bp-md) 0;
+    }
+
+    @include bp-large {
+        margin:rem(15,$text-bp-lg) 0;
+    }   
+}
+.yellow-btn {
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    background-color: $color-yellow;
+    color: #000;
+    text-transform: uppercase;
+    font-size: rem(30,$text-bp-sm);
+    line-height: rem(36,$text-bp-sm);
+    letter-spacing: rem(2,$text-bp-sm);
+    padding:rem(25,$text-bp-sm) 0;
+    width: rem(300,$text-bp-sm);
+
+    transition: all 0.25s ease-in-out; 
+
+    @include bp-medium {
+        font-size: rem(21,$text-bp-md);
+        line-height: rem(24,$text-bp-md);
+        letter-spacing: rem(2,$text-bp-md);
+        padding:rem(15,$text-bp-md) 0;
+        width: rem(200,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(25,$text-bp-lg);
+        line-height: rem(30,$text-bp-lg);
+        letter-spacing: rem(2,$text-bp-lg);
+        padding:rem(15,$text-bp-lg) 0;
+        width: rem(250,$text-bp-lg);
+    }    
+}
+
+.yellow-btn:hover {
+    color: $color-yellow;
+    background-color: #000;
+    text-decoration: none;
+}
+.more-btn {
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border: rem(1,$text-bp-sm) solid #fff;
+    color: #fff;
+    font-size: rem(22,$text-bp-sm);
+    line-height: rem(26,$text-bp-sm);
+    letter-spacing: rem(2,$text-bp-sm);
+    padding:rem(20,$text-bp-sm) 0;
+    width: rem(244,$text-bp-sm);
+
+    transition: all 0.25s ease-in-out; 
+
+    @include bp-medium {
+        font-size: rem(12,$text-bp-md);
+        line-height: rem(16,$text-bp-md);
+        letter-spacing: rem(2,$text-bp-md);
+        padding:rem(15,$text-bp-md) 0;
+        width: rem(175,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(15,$text-bp-lg);
+        line-height: rem(30,$text-bp-lg);
+        letter-spacing: rem(2,$text-bp-lg);
+        padding:rem(10,$text-bp-lg) 0;
+        width: rem(175,$text-bp-lg);
+    }    
+}
+
+.more-btn:hover {
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+
+
+.quote {
+    text-align: center;
+    color: $color-yellow;
+    font-size: rem(48,$text-bp-sm);
+    line-height: rem(52,$text-bp-sm);
+    padding:rem(50,$text-bp-sm) rem(150,$text-bp-sm) rem(150,$text-bp-sm) rem(150,$text-bp-sm);
+
+    @include bp-medium {
+        font-size: rem(44,$text-bp-md);
+        line-height: rem(48,$text-bp-md);
+        padding:rem(150,$text-bp-md) rem(150,$text-bp-md) rem(200,$text-bp-md) rem(150,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(50,$text-bp-lg);
+        line-height: rem(55,$text-bp-lg);
+        padding:rem(150,$text-bp-lg) rem(150,$text-bp-lg) rem(200,$text-bp-lg) rem(150,$text-bp-lg);
+    }  
+
+}
+.promo {
+    .thumb-promo {
+
+    }
+}
+

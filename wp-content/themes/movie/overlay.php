@@ -1,0 +1,17 @@
+<div class="overlay">
+	<div class="close-btn">
+		<i class="fas fa-times"></i>
+	</div>
+	
+	<div class="holder">
+		<div class="overlay-arrow left active">
+			<i class="fas fa-chevron-circle-left"></i>
+		</div>
+		<div class="content">
+		</div>
+		<div class="overlay-arrow right active">
+			<i class="fas fa-chevron-circle-right"></i>
+		</div>
+	</div>
+	
+</div>
