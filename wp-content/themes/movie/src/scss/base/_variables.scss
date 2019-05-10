@@ -15,9 +15,11 @@ $text-bp-md		: 10px;		// fonts will scale up relative to screen-bp-md
 $text-bp-lg		: 10px;		// fonts will scale up relative to screen-bp-lg then stay there
 
 /* Colors */
+$color-headline : #fff;
+$color-footer	: #000;
 $color-blue		: #071c37;	// blue
 $color-yellow	: #eac80b;	// red
-$color-red		: #fe0000;	// red
+$color-red		: #b40005;	// red
 $color-lt-gray	: #bbbbbb;
 $color-gray		: #6b6b6b;
 $overlay-bg		: rgba(0,0,0,0.95);	// semi-transparent black
@@ -48,10 +50,10 @@ $snapchat	: #FFFC00;
 
 
 /* Fonts */
-$body-font : 'loraregular', serif;
-$nav-font :'loraregular', san-serif;
-$headline-font :'loraregular', san-serif;
-$sub-font :'loraregular', san-serif;
+$body-font : Arial, "Helvetica Neue", Helvetica, sans-serif;
+$nav-font :'oldnewspapertypesregular', serif;
+$headline-font :'oldnewspapertypesregular', serif;
+$sub-font :"Arial Black", "Arial Bold", Gadget, sans-serif;;
 $narrow-font :'Open Sans Condensed', sans-serif;
 
 

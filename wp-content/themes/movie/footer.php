@@ -7,7 +7,7 @@
 			?>
 		</div>
 		<div id="copyright">
-			BILL MAHER ©2019 ALL RIGHTS RESERVED.
+			CATHARTIC ENTERTAINMENT ©2019 ALL RIGHTS RESERVED.
 		</div>
 	</footer>
 </div><!-- end site -->

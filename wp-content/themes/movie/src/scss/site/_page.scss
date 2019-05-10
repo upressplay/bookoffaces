@@ -53,7 +53,8 @@
 
 .section-title {
     text-align: left;
-    color: $color-yellow;
+    font-family: $headline-font;
+    color: $color-headline;
     font-size:rem(36,$text-bp-sm);
     margin:rem(50,$text-bp-sm) 0 0 rem(50,$text-bp-sm);
 

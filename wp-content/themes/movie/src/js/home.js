@@ -1,4 +1,4 @@
-;(function(obj, undefined){
+;(function(site, undefined){
 	"use strict";
 
 	var id = "home",
@@ -58,8 +58,8 @@
 
 		if(utils.getBreakPoint() != 'bp-small') {
 			
-			imgLoad.push({'id':'background','img':templateDir+"/img/header-bg.jpg"});
-			imgLoad.push({'id':'background-light','img':templateDir+"/img/header-bg-light.jpg"});
+			//imgLoad.push({'id':'background','img':templateDir+"/img/header-bg.jpg"});
+			//imgLoad.push({'id':'background-light','img':templateDir+"/img/header-bg-light.jpg"});
 			trace.log("imgLoad "+imgLoad.length);
 
 			imgLoad.forEach(function(entry) {

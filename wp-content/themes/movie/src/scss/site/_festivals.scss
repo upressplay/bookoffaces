@@ -1,0 +1,19 @@
+#festivals {
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center; 
+    align-items:flex-start;
+}
+
+.festival {
+    width:rem(300,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(300,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(300,$text-bp-lg);
+    } 
+}

@@ -46,6 +46,10 @@ html {
     display: inline-table;
     min-height: 100vh;
     height:auto;
+    background-image: url(../img/background.jpg);
+    background-size: 100% auto;
+    background-position: left top;
+
     width:rem(750,$text-bp-sm);
     @include bp-medium {
         width:rem(1270,$text-bp-md);

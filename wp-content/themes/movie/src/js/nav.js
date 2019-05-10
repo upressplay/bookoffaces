@@ -1,4 +1,4 @@
-;(function(obj, undefined){
+;(function(site, undefined){
 	"use strict";
 
 	var id = "nav",

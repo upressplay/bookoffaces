@@ -1,52 +1,8 @@
 <?php 
 	get_header(); 
 	include 'header-home.php';
+	include 'festivals.php';
 ?>
-	<div id="schedule">
-		<div class="section-header">
-			<h3 class="sub">
-				Schedule
-			</h3><!-- title -->
-			<h2 class="title">
-				BILL MAHER COMEDY TOUR
-			</h2><!-- title -->
-		</div><!-- section-header -->
-		<div class="schedule-thumbs">
-			<?php 
-
-				$meta_query = array(
-					array(
-						'key' => 'start_date',
-						'value' => date('Ymd'),
-						'type' => 'DATE',
-						'compare' => '>='
-					)
-				);
-				$args = array(
-				   'category_name'		=>'schedule',
-				    'posts_per_page'	=> 6,
-				    'order'				=> 'ASC',
-					'orderby'			=> 'meta_value',
-					'meta_key'			=> 'start_date',
-					'meta_type'			=> 'DATETIME',
-					'meta_query' => $meta_query
-				);
-				$query = new WP_Query( $args );
-				while ( $query->have_posts() ) : $query->the_post(); 
-				    get_template_part( 'thumb-schedule' );	
-
-
-			 endwhile; 
-			 wp_reset_postdata();
-			 ?>
-		</div>
-		<a href="/schedule">
-			<div id="schedule-more" class="more-btn">
-				MORE
-			</div><!-- more-btn -->
-		</a>
-
-	</div><!-- schedule-section -->	
 	<div class="quote">
 		<?php 
 			$args = array(
@@ -56,29 +12,16 @@
 			);
 			$query = new WP_Query( $args );
 			while ( $query->have_posts() ) : $query->the_post(); 
+
 			   echo get_the_title($post->ID);
 
 		 endwhile; 
 		 wp_reset_postdata();?>
 	</div><!-- quote -->	
-	<div class="promo">
-		<?php 
-			$args = array(
-			   'category_name'		=>'promo',
-			    'posts_per_page'	=> 1,
-				'orderby'			=> 'rand'
-			);
-			$query = new WP_Query( $args );
-			while ( $query->have_posts() ) : $query->the_post(); 
-			   get_template_part( 'thumb-promo' );	
-
-		 endwhile; 
-		 wp_reset_postdata();?>
-	</div><!-- promo -->
 
 	<div id="headlines" class="gallery">
 		<div class="section-title">
-			HEADLINES
+			UPDATES
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
@@ -91,13 +34,13 @@
 					$pips = '';
 					$count = 0;
 					$args = array(
-					   'category_name'		=>'headlines',
+					   'category_name'		=>'updates',
 					    'posts_per_page'	=> 10,
 						'orderby'			=> 'date'
 					);
 					$query = new WP_Query( $args );
 					while ( $query->have_posts() ) : $query->the_post(); 
-					   	get_template_part( 'thumb-headlines' );	
+					   	get_template_part( 'thumb-updates' );	
 					   	$count++;
 					   	if($count%2 != 0){
 					   		$pips .= $pip;
@@ -105,6 +48,7 @@
 					   	}
 
 				 endwhile; 
+				 wp_reset_postdata();
 				?>
 				</div><!-- thumbs -->
 			</div><!-- holder -->
@@ -121,6 +65,48 @@
 				MORE
 			</div><!-- more-btn -->
 		</a>
+	</div><!-- headlines -->
+	<div id="castcrew" class="gallery">
+		<div class="section-title">
+			CAST/CREW
+		</div>
+		<div class="container">
+			<div class="gallery-arrow left">
+				<i class="fas fa-chevron-circle-left"></i>
+			</div>
+			<div class="holder">
+				<div class="thumbs">
+				<?php 
+					$pip = '<div class="pip"></div>';
+					$pips = '';
+					$count = 0;
+					$args = array(
+					   'category_name'		=>'castcrew',
+					    'posts_per_page'	=> 10,
+						'orderby'			=> 'date'
+					);
+					$query = new WP_Query( $args );
+					while ( $query->have_posts() ) : $query->the_post(); 
+					   	get_template_part( 'thumb-castcrew' );	
+					   	$count++;
+					   	if($count%2 != 0){
+					   		$pips .= $pip;
+					   		//$count =0;
+					   	}
+
+				 endwhile; 
+				 wp_reset_postdata();
+				?>
+				</div><!-- thumbs -->
+			</div><!-- holder -->
+			<div class="gallery-arrow right active">
+				<i class="fas fa-chevron-circle-right"></i>
+			</div>
+
+		</div><!-- container -->
+		<div class="pips">
+			<?php echo $pips; ?>
+		</div><!-- pips -->
 	</div><!-- headlines -->
 	<div id="videos" class="gallery">
 		<div class="section-title">
@@ -151,6 +137,7 @@
 					   	}
 
 				 endwhile; 
+				 wp_reset_postdata();
 				?>
 				</div><!-- thumbs -->
 			</div><!-- holder -->
@@ -163,7 +150,7 @@
 			<?php echo $pips; ?>
 		</div><!-- pips -->
 		<a href="/videos" target="_self">
-			<div id="headlines-more" class="more-btn">
+			<div id="videos-more" class="more-btn">
 				MORE
 			</div><!-- more-btn -->
 		</a>
@@ -197,6 +184,7 @@
 					   	}
 
 				 endwhile; 
+				 wp_reset_postdata();
 				?>
 				</div><!-- thumbs -->
 			</div><!-- holder -->
@@ -213,5 +201,5 @@
 				MORE
 			</div><!-- more-btn -->
 		</a>
-	</div><!-- videos -->	
+	</div><!-- photos -->	
 <?php get_footer(); ?>

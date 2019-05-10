@@ -3,11 +3,11 @@
 add_image_size( 'share', 1200, 600, array( 'top', 'center' ) );
 add_image_size( 'rect', 400, 225, array( 'center', 'center' ) );
 
-add_action( 'after_setup_theme', 'comedian_setup' );
+add_action( 'after_setup_theme', 'movie_setup' );
 
-function comedian_setup()
+function movie_setup()
 {
-	load_theme_textdomain( 'comedian', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'movie', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
@@ -16,43 +16,43 @@ function comedian_setup()
 
 	if ( ! isset( $content_width ) ) $content_width = 640;
 	register_nav_menus(
-		array( 'main-menu' => __( 'Main Menu', 'comedian' ) )
+		array( 'main-menu' => __( 'Main Menu', 'movie' ) )
 	);
 }
 
-add_action( 'wp_enqueue_scripts', 'comedian_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'movie_load_scripts' );
 
-function comedian_load_scripts()
+function movie_load_scripts()
 {
 	wp_enqueue_script( 'jquery' );
 }
 
-add_action( 'comment_form_before', 'comedian_enqueue_comment_reply_script' );
+add_action( 'comment_form_before', 'movie_enqueue_comment_reply_script' );
 
-function comedian_enqueue_comment_reply_script()
+function movie_enqueue_comment_reply_script()
 {
 	if ( get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 }
 
-add_filter( 'the_title', 'comedian_title' );
+add_filter( 'the_title', 'movie_title' );
 
-function comedian_title( $title ) {
+function movie_title( $title ) {
 	if ( $title == '' ) {
 	return '&rarr;';
 	} else {
 	return $title;
 	}
 }
-add_filter( 'wp_title', 'comedian_filter_wp_title' );
+add_filter( 'wp_title', 'movie_filter_wp_title' );
 
-function comedian_filter_wp_title( $title )
+function movie_filter_wp_title( $title )
 {
 	return $title . esc_attr( get_bloginfo( 'name' ) );
 }
 
-add_action( 'widgets_init', 'comedian_widgets_init' );
+add_action( 'widgets_init', 'movie_widgets_init' );
 
-function comedian_widgets_init()
+function movie_widgets_init()
 
 {
 register_sidebar( array (
@@ -64,7 +64,7 @@ register_sidebar( array (
 	'after_title' => '</h3>',
 	) );
 }
-function comedian_custom_pings( $comment )
+function movie_custom_pings( $comment )
 
 {
 
@@ -74,9 +74,9 @@ $GLOBALS['comment'] = $comment;
 <?php 
 }
 
-add_filter( 'get_comments_number', 'comedian_comments_number' );
+add_filter( 'get_comments_number', 'movie_comments_number' );
 
-function comedian_comments_number( $count )
+function movie_comments_number( $count )
 	{
 	if ( !is_admin() ) {
 	global $id;
