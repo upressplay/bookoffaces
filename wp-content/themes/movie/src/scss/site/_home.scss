@@ -153,27 +153,6 @@ header {
 }
 
 
-
-.quote {
-    text-align: center;
-    color: $color-yellow;
-    font-size: rem(48,$text-bp-sm);
-    line-height: rem(52,$text-bp-sm);
-    padding:rem(50,$text-bp-sm) rem(150,$text-bp-sm) rem(150,$text-bp-sm) rem(150,$text-bp-sm);
-
-    @include bp-medium {
-        font-size: rem(44,$text-bp-md);
-        line-height: rem(48,$text-bp-md);
-        padding:rem(150,$text-bp-md) rem(150,$text-bp-md) rem(200,$text-bp-md) rem(150,$text-bp-md);
-    }
-
-    @include bp-large {
-        font-size: rem(50,$text-bp-lg);
-        line-height: rem(55,$text-bp-lg);
-        padding:rem(150,$text-bp-lg) rem(150,$text-bp-lg) rem(200,$text-bp-lg) rem(150,$text-bp-lg);
-    }  
-
-}
 .promo {
     .thumb-promo {
 

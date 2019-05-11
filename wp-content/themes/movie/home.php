@@ -2,30 +2,62 @@
 	get_header(); 
 	include 'header-home.php';
 	include 'festivals.php';
-?>
-	<div class="quote">
-		<?php 
-			$args = array(
-			   'category_name'		=>'quote',
-			    'posts_per_page'	=> 1,
-				'orderby'			=> 'rand'
-			);
-			$query = new WP_Query( $args );
-			while ( $query->have_posts() ) : $query->the_post(); 
 
-			   echo get_the_title($post->ID);
+	$args = array(
+	   'category_name'		=>'quote',
+	    'posts_per_page'	=> 1
+	);
+	$query = new WP_Query( $args );
+	while ( $query->have_posts() ) : $query->the_post(); 
 
-		 endwhile; 
-		 wp_reset_postdata();?>
-	</div><!-- quote -->	
+	   get_template_part( 'thumb-quote' );	
 
+	endwhile; 
+	wp_reset_postdata();
+	?>
+
+	
+
+	<?php 
+		$args = array(
+		   	'category_name'		=>'synopsis',
+		    'posts_per_page'	=> 1
+		);
+		$query = new WP_Query( $args );
+		while ( $query->have_posts() ) : $query->the_post(); 
+
+			if ( !empty( get_the_content() ) ) :
+				echo '<div id="synopsis">';
+				echo '<div class="holder">';
+		   		echo get_the_content($post->ID);
+		   		echo '</div>';
+		   		echo '</div>';
+		   	endif;
+
+		endwhile; 
+		wp_reset_postdata();
+	?>
+
+	<?php 
+	$args = array(
+	   'category_name'		=>'quote',
+	    'posts_per_page'	=> 1,
+		'offset'			=> 1
+	);
+	$query = new WP_Query( $args );
+	while ( $query->have_posts() ) : $query->the_post(); 
+
+	   get_template_part( 'thumb-quote' );	
+
+	endwhile; 
+	wp_reset_postdata();
+	?>
 	<div id="headlines" class="gallery">
 		<div class="section-title">
 			UPDATES
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
-				<i class="fas fa-chevron-circle-left"></i>
 			</div>
 			<div class="holder">
 				<div class="thumbs">
@@ -53,7 +85,6 @@
 				</div><!-- thumbs -->
 			</div><!-- holder -->
 			<div class="gallery-arrow right active">
-				<i class="fas fa-chevron-circle-right"></i>
 			</div>
 
 		</div><!-- container -->
@@ -65,14 +96,13 @@
 				MORE
 			</div><!-- more-btn -->
 		</a>
-	</div><!-- headlines -->
+	</div><!-- updates -->
 	<div id="castcrew" class="gallery">
 		<div class="section-title">
 			CAST/CREW
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
-				<i class="fas fa-chevron-circle-left"></i>
 			</div>
 			<div class="holder">
 				<div class="thumbs">
@@ -100,7 +130,6 @@
 				</div><!-- thumbs -->
 			</div><!-- holder -->
 			<div class="gallery-arrow right active">
-				<i class="fas fa-chevron-circle-right"></i>
 			</div>
 
 		</div><!-- container -->
@@ -114,7 +143,6 @@
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
-				<i class="fas fa-chevron-circle-left"></i>
 			</div>
 			<div class="holder">
 				<div class="thumbs">
@@ -142,7 +170,6 @@
 				</div><!-- thumbs -->
 			</div><!-- holder -->
 			<div class="gallery-arrow right active">
-				<i class="fas fa-chevron-circle-right"></i>
 			</div>
 
 		</div><!-- container -->
@@ -161,7 +188,6 @@
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
-				<i class="fas fa-chevron-circle-left"></i>
 			</div>
 			<div class="holder">
 				<div class="thumbs">
@@ -189,7 +215,6 @@
 				</div><!-- thumbs -->
 			</div><!-- holder -->
 			<div class="gallery-arrow right active">
-				<i class="fas fa-chevron-circle-right"></i>
 			</div>
 
 		</div><!-- container -->

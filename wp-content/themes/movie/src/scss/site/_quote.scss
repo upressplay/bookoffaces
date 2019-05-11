@@ -1,0 +1,94 @@
+.quote {
+	display: flex;
+	background-position: 0% 0%;
+	background-size: 100% auto;
+
+	height: rem(500,$text-bp-sm);
+
+    @include bp-medium {
+        
+        height: rem(750,$text-bp-md);
+    }
+
+    @include bp-large {
+        height: rem(750,$text-bp-lg);
+    }
+
+    .holder {
+
+    	font-family: $headline-font;
+    	text-align: center;
+    	width: rem(750,$text-bp-sm);
+    	margin-top: rem(130,$text-bp-sm);
+
+	    @include bp-medium {
+	        
+	        width: rem(500,$text-bp-md);
+	        margin-top: rem(130,$text-bp-md);
+	    }
+
+	    @include bp-large {
+	        width: rem(600,$text-bp-lg);
+	        margin-top: rem(130,$text-bp-lg);
+	    }
+
+	    &.left {
+	    	margin-left: rem(230,$text-bp-sm);
+	    	@include bp-medium {
+	        
+		        margin-left: rem(230,$text-bp-md);
+		    }
+
+		    @include bp-large {
+		        margin-left: rem(230,$text-bp-lg);
+		    }
+	    }
+	    &.right {
+	    	margin-left: rem(280,$text-bp-sm);
+	    	@include bp-medium {
+	        
+		        margin-left: rem(280,$text-bp-md);
+		    }
+
+		    @include bp-large {
+		        margin-left: rem(900,$text-bp-lg);
+		    }
+	    }
+    	.txt {
+    		color:#fff;
+    		
+    		font-size: rem(50,$text-bp-sm);
+        	line-height: rem(55,$text-bp-sm);
+
+        	@include bp-medium {
+		        font-size: rem(50,$text-bp-md);
+        		line-height: rem(55,$text-bp-md);
+		    }
+
+		    @include bp-large {
+		    	text-shadow: rem(5,$text-bp-lg) rem(5,$text-bp-lg) rem(20,$text-bp-lg) black; 
+		        font-size: rem(50,$text-bp-lg);
+        		line-height: rem(55,$text-bp-lg);
+		    }
+    	}
+    	.author {
+    		color:$color-red;
+    		text-shadow: 1px 1px 2px black; 
+    		font-size: rem(36,$text-bp-sm);
+        	line-height: rem(55,$text-bp-sm);
+
+        	@include bp-medium {
+		        font-size: rem(36,$text-bp-md);
+        		line-height: rem(55,$text-bp-md);
+		    }
+
+		    @include bp-large {
+		        font-size: rem(36,$text-bp-lg);
+        		line-height: rem(55,$text-bp-lg);
+		    }
+    	}
+    }
+}
+
+
+

@@ -4,6 +4,16 @@
     flex-wrap:wrap;
     justify-content:center; 
     align-items:flex-start;
+
+    margin-bottom:rem(100,$text-bp-sm);
+
+    @include bp-medium {
+        margin-bottom:rem(100,$text-bp-md);
+    }
+
+    @include bp-large {
+        margin-bottom:rem(100,$text-bp-lg);
+    }
 }
 
 .festival {

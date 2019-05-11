@@ -20,7 +20,6 @@
         dom.menuCloseBtn = $("#menu-close-btn");
         dom.navBtns = $("#nav-btns"); 
         dom.navBtn = $(".nav-btn"); 
-        dom.scheduleMenu = $("#schedule-menu");  
         trace.log('dom.navBtn = '+dom.navBtn);
 
 
@@ -31,41 +30,7 @@
         dom.menuCloseBtn.click(function(event) {
             closeMenu();
         });
-
-
-        dom.scrollUp.click(function(event) {
-            scrollToTop();
-        });
-
-        dom.site.scroll(function() {
-            scrolling();
-        });   
-    }
-
-    /* watches the user scroll and turns on and off the scroll up icon */
-    function scrolling() {
-        //trace.push('scrolling');
-
-        var scrollTop = dom.site.scrollTop();
-        var distance = 300;
-        //trace.push('scrollTop = '+scrollTop);
-
-        if(scrollTop > distance) {
-            dom.scrollUp.addClass('active');
-        } else {
-            dom.scrollUp.removeClass('active');
-        }
-
-    }
-
-    /* clicking the scroll up icon */
-    function scrollToTop() {
-        trace.push('scrollToTop');
-
-        dom.site.animate({ 'scrollTop': '0' }, 500);
-
-        //dom.site.scrollTop(0);
-
+  
     }
 
     /* openMenu opens the mobile nav */

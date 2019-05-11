@@ -94,9 +94,6 @@ html, body {
   @media only screen and (min-width: 1271px) {
     html, body {
       font-size: 0.625vw; } }
-  @media only screen and (min-width: 1601px) {
-    html, body {
-      font-size: 10px; } }
 
 body {
   margin: 0;
@@ -484,23 +481,6 @@ header {
   background-color: #fff;
   text-decoration: none; }
 
-.quote {
-  text-align: center;
-  color: #eac80b;
-  font-size: 4.8rem;
-  line-height: 5.2rem;
-  padding: 5rem 15rem 15rem 15rem; }
-  @media only screen and (min-width: 751px) {
-    .quote {
-      font-size: 4.4rem;
-      line-height: 4.8rem;
-      padding: 15rem 15rem 20rem 15rem; } }
-  @media only screen and (min-width: 1271px) {
-    .quote {
-      font-size: 5rem;
-      line-height: 5.5rem;
-      padding: 15rem 15rem 20rem 15rem; } }
-
 .section-header.category {
   padding: 0 7rem; }
   @media only screen and (min-width: 751px) {
@@ -593,7 +573,14 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start; }
+  align-items: flex-start;
+  margin-bottom: 10rem; }
+  @media only screen and (min-width: 751px) {
+    #festivals {
+      margin-bottom: 10rem; } }
+  @media only screen and (min-width: 1271px) {
+    #festivals {
+      margin-bottom: 10rem; } }
 
 .festival {
   width: 30rem; }
@@ -603,6 +590,102 @@ header {
   @media only screen and (min-width: 1271px) {
     .festival {
       width: 30rem; } }
+
+.quote {
+  display: flex;
+  background-position: 0% 0%;
+  background-size: 100% auto;
+  height: 50rem; }
+  @media only screen and (min-width: 751px) {
+    .quote {
+      height: 75rem; } }
+  @media only screen and (min-width: 1271px) {
+    .quote {
+      height: 75rem; } }
+  .quote .holder {
+    font-family: "oldnewspapertypesregular", serif;
+    text-align: center;
+    width: 75rem;
+    margin-top: 13rem; }
+    @media only screen and (min-width: 751px) {
+      .quote .holder {
+        width: 50rem;
+        margin-top: 13rem; } }
+    @media only screen and (min-width: 1271px) {
+      .quote .holder {
+        width: 60rem;
+        margin-top: 13rem; } }
+    .quote .holder.left {
+      margin-left: 23rem; }
+      @media only screen and (min-width: 751px) {
+        .quote .holder.left {
+          margin-left: 23rem; } }
+      @media only screen and (min-width: 1271px) {
+        .quote .holder.left {
+          margin-left: 23rem; } }
+    .quote .holder.right {
+      margin-left: 28rem; }
+      @media only screen and (min-width: 751px) {
+        .quote .holder.right {
+          margin-left: 28rem; } }
+      @media only screen and (min-width: 1271px) {
+        .quote .holder.right {
+          margin-left: 90rem; } }
+    .quote .holder .txt {
+      color: #fff;
+      font-size: 5rem;
+      line-height: 5.5rem; }
+      @media only screen and (min-width: 751px) {
+        .quote .holder .txt {
+          font-size: 5rem;
+          line-height: 5.5rem; } }
+      @media only screen and (min-width: 1271px) {
+        .quote .holder .txt {
+          text-shadow: 0.5rem 0.5rem 2rem black;
+          font-size: 5rem;
+          line-height: 5.5rem; } }
+    .quote .holder .author {
+      color: #b40005;
+      text-shadow: 1px 1px 2px black;
+      font-size: 3.6rem;
+      line-height: 5.5rem; }
+      @media only screen and (min-width: 751px) {
+        .quote .holder .author {
+          font-size: 3.6rem;
+          line-height: 5.5rem; } }
+      @media only screen and (min-width: 1271px) {
+        .quote .holder .author {
+          font-size: 3.6rem;
+          line-height: 5.5rem; } }
+
+#synopsis {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; }
+  #synopsis .holder {
+    font-family: "oldnewspapertypesregular", serif;
+    background-color: rgba(154, 0, 0, 0.5);
+    width: 45rem;
+    padding: 2rem;
+    margin: 5rem;
+    font-size: 2.8rem;
+    line-height: 3.6rem; }
+    @media only screen and (min-width: 751px) {
+      #synopsis .holder {
+        width: 65rem;
+        padding: 2rem;
+        margin: 10rem;
+        font-size: 2.8rem;
+        line-height: 3.6rem; } }
+    @media only screen and (min-width: 1271px) {
+      #synopsis .holder {
+        width: 55rem;
+        padding: 2rem;
+        margin: 10rem;
+        font-size: 2.8rem;
+        line-height: 3.6rem; } }
 
 .gallery {
   text-align: center;
@@ -646,10 +729,13 @@ header {
 
 .gallery-arrow {
   cursor: initial;
-  margin: 9rem;
-  font-size: 5rem;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   opacity: 0.2;
   display: none;
+  margin: 9rem;
+  font-size: 5rem;
   transition: all 0.25s ease-in-out; }
   @media only screen and (min-width: 751px) {
     .gallery-arrow {
@@ -658,14 +744,25 @@ header {
       font-size: 2.8rem; } }
   @media only screen and (min-width: 1271px) {
     .gallery-arrow {
+      width: 5rem;
+      height: 5rem;
       margin: 9rem 4.5rem;
       font-size: 3.6rem; } }
   .gallery-arrow.active {
     cursor: pointer;
     opacity: 1; }
+  .gallery-arrow.left {
+    background-image: url(../img/arrow_left.png); }
+  .gallery-arrow.right {
+    background-image: url(../img/arrow_right.png); }
 
-.gallery-arrow:hover.active {
-  color: #eac80b; }
+@media only screen and (min-width: 1271px) {
+  .gallery-arrow.active:hover.left {
+    transform: translateX(-1rem); } }
+
+@media only screen and (min-width: 1271px) {
+  .gallery-arrow.active:hover.right {
+    transform: translateX(1rem); } }
 
 .gallery-thumb {
   display: flex;

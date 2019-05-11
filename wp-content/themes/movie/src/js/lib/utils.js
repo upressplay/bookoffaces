@@ -52,7 +52,7 @@
     }
 
     function getHeight() {
-       var height = Math.round($( "#siteHolder" ).outerHeight());
+       var height = Math.round($( window ).outerHeight());
        return height;
     }
 
