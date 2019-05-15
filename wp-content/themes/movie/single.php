@@ -3,6 +3,7 @@
 	$cat = get_the_category($post->ID);
 	$catSlug = $cat[0]->slug;
 	$catName = $cat[0]->name;
+	echo $catSlug;
 	?>
 
 
@@ -12,12 +13,10 @@
 		</span>
 	</div>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<?php if ($catSlug == "official-selection") {
-				get_template_part( 'post-official-selection' );	
+		<?php if ($catSlug == "castcrew") {
+				get_template_part( 'post-castcrew' );	
 			} elseif ($catSlug == "photos") {
 				get_template_part( 'post-photos' );
-			} elseif ($catSlug == "schedule") {
-				get_template_part( 'post-schedule' );
 			} else {
 				get_template_part( 'post-single' );
 			} 

@@ -79,6 +79,9 @@
 
 .overlay-arrow {
     cursor: initial;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     margin:rem(90,$text-bp-sm);
     font-size:rem(50,$text-bp-sm);
     opacity: 0.2;
@@ -91,6 +94,8 @@
     }
 
     @include bp-large {
+        width:rem(50,$text-bp-lg);
+        height:rem(50,$text-bp-lg);
         margin:rem(90,$text-bp-lg) rem(45,$text-bp-lg);
         font-size:rem(36,$text-bp-lg);
     } 
@@ -98,6 +103,12 @@
         cursor: pointer;
         opacity: 1;
     } 
+    &.left {
+        background-image: url(../img/arrow_left.png);
+    }
+    &.right {
+        background-image: url(../img/arrow_right.png);
+    }
     transition: all 0.25s ease-in-out;  
 }
 

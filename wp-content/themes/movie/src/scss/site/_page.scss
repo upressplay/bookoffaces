@@ -1,27 +1,16 @@
 .section-header {
-    &.category {
-        padding: 0 rem(70,$text-bp-sm); 
-        @include bp-medium {
-            padding: 0 rem(100,$text-bp-md);
-        }
+    padding: 0 rem(70,$text-bp-sm); 
+    @include bp-medium {
+        padding: 0 rem(100,$text-bp-md);
+    }
 
-        @include bp-large {
-            padding: 0 rem(100,$text-bp-lg);
-        }
-    } 
+    @include bp-large {
+        padding: 0 rem(100,$text-bp-lg);
+    }
 
-    &.schedule {
-        padding: 0 rem(70,$text-bp-sm); 
-        @include bp-medium {
-            padding: 0 rem(100,$text-bp-md);
-        }
-
-        @include bp-large {
-            padding: 0 rem(150,$text-bp-lg);
-        }
-    } 
     .title {
-        color: #eac80b;    
+        font-family: $headline-font;
+        color: #fff;    
         font-size:rem(36,$text-bp-sm);
         margin-bottom:rem(70,$text-bp-sm); 
         @include bp-medium {

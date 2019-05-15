@@ -1,6 +1,5 @@
 <?php 
 	get_header(); 
-	include 'header-home.php';
 	include 'festivals.php';
 
 	$args = array(
@@ -54,7 +53,7 @@
 	?>
 	<div id="headlines" class="gallery">
 		<div class="section-title">
-			UPDATES
+			Updates
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
@@ -99,7 +98,7 @@
 	</div><!-- updates -->
 	<div id="castcrew" class="gallery">
 		<div class="section-title">
-			CAST/CREW
+			Cast/Crew
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">
@@ -112,8 +111,7 @@
 					$count = 0;
 					$args = array(
 					   'category_name'		=>'castcrew',
-					    'posts_per_page'	=> 10,
-						'orderby'			=> 'date'
+					    'posts_per_page'	=> 100
 					);
 					$query = new WP_Query( $args );
 					while ( $query->have_posts() ) : $query->the_post(); 
@@ -139,7 +137,7 @@
 	</div><!-- headlines -->
 	<div id="videos" class="gallery">
 		<div class="section-title">
-			VIDEOS
+			Videos
 		</div>
 		<div class="container">
 			<div class="gallery-arrow left">

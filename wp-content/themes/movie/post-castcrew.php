@@ -1,8 +1,8 @@
-<div class="single">
+<div class="castcrew">
 	<?php if ( has_post_thumbnail() ) : ?>
-	<header> 
+	<div class="headshot"> 
 		<?php the_post_thumbnail('large'); ?>
-	</header> 
+	</div> 
 	<?php endif; ?>
 
 	<h1 class="title">
@@ -10,14 +10,10 @@
 	</h1>
 
 	<h2 class="date">
-		<?php the_date('F j, Y'); ?>
+		<?php echo get_field('role'); ?>
 	</h2>
 
 	<div class="content">
 		<?php the_content(); ?>
 	</div>
 </div><!-- single -->
-
-
-
-

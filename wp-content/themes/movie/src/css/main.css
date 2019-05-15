@@ -481,49 +481,39 @@ header {
   background-color: #fff;
   text-decoration: none; }
 
-.section-header.category {
+.section-header {
   padding: 0 7rem; }
   @media only screen and (min-width: 751px) {
-    .section-header.category {
+    .section-header {
       padding: 0 10rem; } }
   @media only screen and (min-width: 1271px) {
-    .section-header.category {
+    .section-header {
       padding: 0 10rem; } }
-
-.section-header.schedule {
-  padding: 0 7rem; }
-  @media only screen and (min-width: 751px) {
-    .section-header.schedule {
-      padding: 0 10rem; } }
-  @media only screen and (min-width: 1271px) {
-    .section-header.schedule {
-      padding: 0 15rem; } }
-
-.section-header .title {
-  color: #eac80b;
-  font-size: 3.6rem;
-  margin-bottom: 7rem; }
-  @media only screen and (min-width: 751px) {
-    .section-header .title {
-      font-size: 3.2rem;
-      margin-bottom: 6.4rem; } }
-  @media only screen and (min-width: 1271px) {
-    .section-header .title {
-      font-size: 4rem;
-      margin-bottom: 8rem; } }
-
-.section-header .sub {
-  color: #fff;
-  font-size: 2.2rem;
-  margin-bottom: 1rem; }
-  @media only screen and (min-width: 751px) {
-    .section-header .sub {
-      font-size: 1.4rem;
-      margin-bottom: 1rem; } }
-  @media only screen and (min-width: 1271px) {
-    .section-header .sub {
-      font-size: 1.4rem;
-      margin-bottom: 1rem; } }
+  .section-header .title {
+    font-family: "oldnewspapertypesregular", serif;
+    color: #fff;
+    font-size: 3.6rem;
+    margin-bottom: 7rem; }
+    @media only screen and (min-width: 751px) {
+      .section-header .title {
+        font-size: 3.2rem;
+        margin-bottom: 6.4rem; } }
+    @media only screen and (min-width: 1271px) {
+      .section-header .title {
+        font-size: 4rem;
+        margin-bottom: 8rem; } }
+  .section-header .sub {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 1rem; }
+    @media only screen and (min-width: 751px) {
+      .section-header .sub {
+        font-size: 1.4rem;
+        margin-bottom: 1rem; } }
+    @media only screen and (min-width: 1271px) {
+      .section-header .sub {
+        font-size: 1.4rem;
+        margin-bottom: 1rem; } }
 
 .section-title {
   text-align: left;
@@ -686,6 +676,29 @@ header {
         margin: 10rem;
         font-size: 2.8rem;
         line-height: 3.6rem; } }
+
+#festivals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 10rem; }
+  @media only screen and (min-width: 751px) {
+    #festivals {
+      margin-bottom: 10rem; } }
+  @media only screen and (min-width: 1271px) {
+    #festivals {
+      margin-bottom: 10rem; } }
+
+.festival {
+  width: 30rem; }
+  @media only screen and (min-width: 751px) {
+    .festival {
+      width: 30rem; } }
+  @media only screen and (min-width: 1271px) {
+    .festival {
+      width: 30rem; } }
 
 .gallery {
   text-align: center;
@@ -913,6 +926,9 @@ header {
 
 .overlay-arrow {
   cursor: initial;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   margin: 9rem;
   font-size: 5rem;
   opacity: 0.2;
@@ -925,11 +941,17 @@ header {
       font-size: 4rem; } }
   @media only screen and (min-width: 1271px) {
     .overlay-arrow {
+      width: 5rem;
+      height: 5rem;
       margin: 9rem 4.5rem;
       font-size: 3.6rem; } }
   .overlay-arrow.active {
     cursor: pointer;
     opacity: 1; }
+  .overlay-arrow.left {
+    background-image: url(../img/arrow_left.png); }
+  .overlay-arrow.right {
+    background-image: url(../img/arrow_right.png); }
 
 .gallery-arrow:hover.active {
   color: #eac80b; }

@@ -10,13 +10,15 @@
 	next = 0,
 	currentContent = {},
 	videos = {},
-	photos = [],
+	photos = {},
+	articles = {},
 	overlayOpen = false;
 
 	function init() {
 
 		videos = {'current':-1,'next':-1, 'content':[]};
 		photos = {'current':-1,'next':-1, 'content':[]};
+		articles = {'current':-1,'next':-1, 'content':[]};
 		
 		dom.site = $("#site");
 		trace.log(id+" render!");
@@ -44,6 +46,18 @@
                 openOverlay(index,photos);
             });
 			photos.content.push(btn);
+		});
+
+		dom.article = $( ".article" );
+		dom.article.each(function( index ) {
+
+			var btn = $(this);
+			btn.attr('data-id',index);
+			btn.click(function(event) {
+				event.preventDefault();
+                openOverlay(index,articles);
+            });
+			articles.content.push(btn);
 		});
 
 		dom.overlay = $('.overlay');
@@ -125,9 +139,11 @@
 
 		var hires = entry.attr('data-hires');
 		var vidid = entry.attr('data-vidid');
+		var vidfile = entry.attr('data-vidfile');
 		var width = parseInt(entry.attr('data-hires-w'));
 		var height = parseInt(entry.attr('data-hires-h'));
 		trace.log("width = "+width+" height = "+height);
+
 		if(height >= width) {
 			dom.content.addClass('tall');
 		} else {
