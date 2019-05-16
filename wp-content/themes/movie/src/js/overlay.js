@@ -143,7 +143,10 @@
 		var vidtype = entry.attr('data-vidtype');
 		var width = parseInt(entry.attr('data-hires-w'));
 		var height = parseInt(entry.attr('data-hires-h'));
-		trace.log("width = "+width+" height = "+height);
+		var content = entry.find('.content').html();
+		var title = entry.find('.title').html();
+		var sub = entry.find('.sub').html();
+		trace.log("content = "+content+" height = "+height);
 
 		if(height >= width) {
 			dom.content.addClass('tall');
@@ -153,11 +156,10 @@
 		}
 		current = id;
 		trace.log("hires = "+hires+" vidid = "+vidid);
+		dom.content.html('');
 
 		if(vidid != undefined && vidid != "") {
 			trace.log("this is a video vidtype = "+vidtype);
-			dom.content.html('');
-
 			if(vidtype == "youtube") dom.content.html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+vidid+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			if(vidtype == "vimeo") dom.content.html('<iframe src="https://player.vimeo.com/video/'+vidid+'" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
 
@@ -168,9 +170,17 @@
 
 		if(hires != undefined && hires != "") {
 			trace.log("this is a photo");
-			dom.content.html('');
-			dom.content.html('<img src="'+hires+'"/>');
+			
+			dom.content.append('<div class="featured-img"><img src="'+hires+'"/></div>');
+
 		}
+
+		if(content != undefined && content != "") {
+			trace.log("this is a article");
+			dom.content.append('<div class="info"><h1 class="title">'+title+'</h1> <h2 class="sub">'+sub+'</h2> <div class="content">'+content+'</div> </div>');
+
+		}
+
 
 		dom.content.addClass('active');
 	}

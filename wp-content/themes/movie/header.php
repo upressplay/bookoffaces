@@ -12,6 +12,16 @@
 		<script>
 			var templateDir = "<?php bloginfo('template_directory') ?>";
 		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140353974-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-140353974-1');
+		</script>
+
 	</head>
 	<body <?php body_class(); ?>>
 	
@@ -51,9 +61,10 @@
 				<div class="film-by">
 					a Rus Robert Blemker film:
 				</div>
-				<div class="site-title">
-					The Book of Faces
-				</div>
-
+				<a href="/">
+					<div class="site-title">
+						The Book of Faces
+					</div>
+				</a>
 			</header>
 			

@@ -6,18 +6,25 @@ header {
     justify-content:flex-start; 
     align-items:center;
 
+    background-image: url(../img/header-background.jpg);
+    background-size: 100% auto;
+    background-color: #000;
+    
+    background-repeat: no-repeat;
+
+    background-position: 0 rem(20,$text-bp-sm);
     width: rem(750,$text-bp-sm);
-    height: rem(660,$text-bp-sm);
+    height: rem(330,$text-bp-sm);
 
     @include bp-medium {
-        
+        background-position: 0 0;
         width: rem(1270,$text-bp-md);
         height: rem(660,$text-bp-md);
     }
 
     @include bp-large {
         width: rem(1600,$text-bp-lg);
-        height: rem(660,$text-bp-lg);
+        height: rem(630,$text-bp-lg);
     }
     &.category {
         height: rem(290,$text-bp-sm);
@@ -33,17 +40,12 @@ header {
 
 
 }
-header {
-    position: relative;
-    @include bp-medium {
-        background: none;
-    }
-}
+
 
 .company-logo {
 
     margin-top: rem(30,$text-bp-sm);  
-    width: rem(500,$text-bp-sm);   
+    width: rem(350,$text-bp-sm);   
 
     @include bp-medium {
         margin-top: rem(30,$text-bp-md);  
@@ -61,7 +63,7 @@ header {
     font-family: $headline-font;
     text-align: center;
 
-    font-size: rem(21,$text-bp-sm);
+    font-size: rem(18,$text-bp-sm);
     line-height: rem(24,$text-bp-sm);
 
     @include bp-medium {
@@ -98,8 +100,8 @@ header {
 .site-title {
     font-family: $headline-font;
     color: $color-red;
-    margin-top: rem(100,$text-bp-sm); 
-    font-size: rem(30,$text-bp-sm);
+    margin-top: rem(30,$text-bp-sm); 
+    font-size: rem(45,$text-bp-sm);
     line-height: rem(36,$text-bp-sm);
 
     @include bp-medium {
@@ -116,39 +118,28 @@ header {
 }
 
 .more-btn {
+    font-family: $nav-font;
     cursor: pointer;
-    text-align: center;
     display: inline-block;
-    border: rem(1,$text-bp-sm) solid #fff;
     color: #fff;
-    font-size: rem(22,$text-bp-sm);
+    font-size: rem(48,$text-bp-sm);
     line-height: rem(26,$text-bp-sm);
-    letter-spacing: rem(2,$text-bp-sm);
-    padding:rem(20,$text-bp-sm) 0;
-    width: rem(244,$text-bp-sm);
 
     transition: all 0.25s ease-in-out; 
 
     @include bp-medium {
-        font-size: rem(12,$text-bp-md);
-        line-height: rem(16,$text-bp-md);
-        letter-spacing: rem(2,$text-bp-md);
-        padding:rem(15,$text-bp-md) 0;
-        width: rem(175,$text-bp-md);
+        font-size: rem(48,$text-bp-md);
+        line-height: rem(55,$text-bp-md);
     }
 
     @include bp-large {
-        font-size: rem(15,$text-bp-lg);
-        line-height: rem(30,$text-bp-lg);
-        letter-spacing: rem(2,$text-bp-lg);
-        padding:rem(10,$text-bp-lg) 0;
-        width: rem(175,$text-bp-lg);
+        font-size: rem(48,$text-bp-lg);
+        line-height: rem(55,$text-bp-lg);
     }    
 }
 
 .more-btn:hover {
-    color: #000;
-    background-color: #fff;
+    color: $color-red;
     text-decoration: none;
 }
 
@@ -163,49 +154,52 @@ header {
     cursor: pointer;
     font-family: $headline-font;
     color: $color-headline;
-    font-size:rem(36,$text-bp-sm);
+    font-size:rem(72,$text-bp-sm);
 
     @include bp-medium {
         font-size:rem(36,$text-bp-md);
     }
 
     @include bp-large {
-        font-size:rem(60,$text-bp-lg);
+        font-size:rem(80,$text-bp-lg);
     }  
-    .arrow {
-        display: inline-block;
-        background-image: url(../img/arrow_right.png);
-        background-position: top left;
-        background-repeat: no-repeat;
-        background-size: 100% auto;
+      
+}
 
-        width:rem(50,$text-bp-sm);
-        height:rem(50,$text-bp-sm);
-       
-         
-        @include bp-medium {
-            width:rem(50,$text-bp-md);
-            height:rem(50,$text-bp-md);
-        }
+.arrow {
+    display: inline-block;
+    background-image: url(../img/arrow_right.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 
-        @include bp-large {
-            width:rem(50,$text-bp-lg);
-            height:rem(50,$text-bp-lg);
-            margin-left:rem(30,$text-bp-lg);
+    width:rem(40,$text-bp-sm);
+    height:rem(40,$text-bp-sm);
+    margin-left:rem(20,$text-bp-sm);   
+     
+    @include bp-medium {
+        width:rem(50,$text-bp-md);
+        height:rem(50,$text-bp-md);
+        margin-left:rem(30,$text-bp-md);
+    }
 
-        } 
-  
-    }  
+    @include bp-large {
+        width:rem(50,$text-bp-lg);
+        height:rem(50,$text-bp-lg);
+        margin-left:rem(30,$text-bp-lg);
+
+    } 
+
 }
 #trailer-btn {
-    margin:rem(50,$text-bp-sm) 0 0 rem(50,$text-bp-sm);
+    margin:rem(200,$text-bp-sm) 0 0 rem(240,$text-bp-sm);
 
     @include bp-medium {
         margin:rem(150,$text-bp-md) 0 rem(50,$text-bp-md) rem(600,$text-bp-md);
     }
 
     @include bp-large {
-        margin:rem(150,$text-bp-lg) 0 rem(50,$text-bp-lg) rem(600,$text-bp-lg);
+        margin:rem(350,$text-bp-lg) 0 rem(50,$text-bp-lg) rem(660,$text-bp-lg);
     }  
 
 }

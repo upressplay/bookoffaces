@@ -1,15 +1,13 @@
 
 <?php 
-	$link = get_field('link');	
+	$link = get_field('link',$post->ID);	
 	if( $link ):
 		echo '<a href="'.$link['url'].'" target="'.$link['target'].'">';
 	endif; 
 ?>
-<div class="festival-thumb">
+<div class="festival">
 	<?php if ( has_post_thumbnail() ) : ?>
-		<div class="thumb-img"> 
-			<?php the_post_thumbnail('rect'); ?>
-		</div><!-- thumb-img --> 
+		<?php the_post_thumbnail('medium'); ?>
 	<?php endif; ?>
 </div> <!-- thumb -->
 <?php 

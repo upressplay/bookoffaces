@@ -1,11 +1,11 @@
 .section-header {
-    padding: 0 rem(70,$text-bp-sm); 
+    margin: 0 rem(70,$text-bp-sm); 
     @include bp-medium {
-        padding: 0 rem(100,$text-bp-md);
+        margin: 0 rem(100,$text-bp-md);
     }
 
     @include bp-large {
-        padding: 0 rem(100,$text-bp-lg);
+        margin: rem(25,$text-bp-lg) rem(100,$text-bp-lg);
     }
 
     .title {
@@ -44,8 +44,8 @@
     text-align: left;
     font-family: $headline-font;
     color: $color-headline;
-    font-size:rem(36,$text-bp-sm);
-    margin:rem(50,$text-bp-sm) 0 0 rem(50,$text-bp-sm);
+    font-size:rem(48,$text-bp-sm);
+    margin:rem(50,$text-bp-sm) 0 rem(100,$text-bp-sm) rem(100,$text-bp-sm);
 
     @include bp-medium {
         font-size:rem(36,$text-bp-md);
@@ -66,6 +66,11 @@
 }
 
 .page-nav {
+    display: flex;
+    justify-content:center;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    
     text-align: center;
     font-size:rem(75,$text-bp-sm);
     margin:rem(30,$text-bp-sm); 

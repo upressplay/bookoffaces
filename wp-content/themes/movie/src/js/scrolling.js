@@ -31,7 +31,8 @@
         dom.scrolling.each(function( index ) {
             var elem = $(this);
             data.push({'obj':elem});
-        });   
+        }); 
+        scrolling();  
     }
 
     /* watches the user scroll and turns on and off the scroll up icon */
@@ -53,7 +54,7 @@
         data.forEach(function(element) {
             
             var top = element.obj.offset().top;
-            var percent = ((windowH-top)/(windowH*1.1))*100;
+            var percent = ((windowH-top)/(windowH*1.5))*100;
             if(percent < 0) percent = 0;
             if(percent > 100) percent = 100;
 

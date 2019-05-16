@@ -10,7 +10,6 @@
 	while ( $query->have_posts() ) : $query->the_post(); 
 	    get_template_part( 'thumb-festival' );	
 
-
  endwhile; 
  wp_reset_postdata();
  ?>

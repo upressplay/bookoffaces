@@ -84,7 +84,7 @@
 		</div><!-- pips -->
 		<a href="http://billmaher.tumblr.com" target="_blank">
 			<div id="headlines-more" class="more-btn">
-				MORE
+				MORE<div class="arrow"></div>
 			</div><!-- more-btn -->
 		</a>
 	</div><!-- updates -->
@@ -182,9 +182,9 @@
 		<div class="pips">
 			<?php echo $pips; ?>
 		</div><!-- pips -->
-		<a href="/videos" target="_self">
+		<a href="/photos" target="_self">
 			<div id="headlines-more" class="more-btn">
-				MORE
+				MORE<div class="arrow"></div>
 			</div><!-- more-btn -->
 		</a>
 	</div><!-- photos -->	

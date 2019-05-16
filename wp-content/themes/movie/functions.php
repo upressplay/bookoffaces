@@ -118,10 +118,10 @@ function pagination($pages = '', $range = 4)
     {
     	echo "<div class=\"page-nav\">";
     	if($paged >1) {
-    		echo "<a href='".get_pagenum_link($paged-1)."'?><i class=\"fas fa-chevron-circle-left\"></i></a>";
+    		echo "<a href='".get_pagenum_link($paged-1)."'?><i class=\"gallery-arrow left\"></i></a>";
     	}
     	if($paged < $pages) {
-    		echo "<a href='".get_pagenum_link($paged+1)."'?><i class=\"fas fa-chevron-circle-right\"></i></a>";	
+    		echo "<a href='".get_pagenum_link($paged+1)."'?><i class=\"gallery-arrow right\"></i></a>";	
     	}
     	echo "</div>";
     }

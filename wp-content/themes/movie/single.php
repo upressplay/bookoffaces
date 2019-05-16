@@ -3,7 +3,6 @@
 	$cat = get_the_category($post->ID);
 	$catSlug = $cat[0]->slug;
 	$catName = $cat[0]->name;
-	echo $catSlug;
 	?>
 
 
@@ -23,6 +22,6 @@
 		?>
 	<?php endwhile; endif; ?>
 	<div class="page-nav">
-		<?php previous_post_link('%link', '<i class="fas fa-caret-square-left"></i>', TRUE); ?>  <?php next_post_link('%link', '<i class="fas fa-caret-square-right"></i>', TRUE); ?> 
+		<?php previous_post_link('%link', '<div class="gallery-arrow left active"></div>', TRUE); ?>  <?php next_post_link('%link', '<div class="gallery-arrow right active"></div>', TRUE); ?> 
 	</div> 
 <?php get_footer(); ?>
