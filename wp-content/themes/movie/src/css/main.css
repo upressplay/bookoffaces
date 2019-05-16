@@ -481,6 +481,61 @@ header {
   background-color: #fff;
   text-decoration: none; }
 
+.txt-btn {
+  cursor: pointer;
+  font-family: "oldnewspapertypesregular", serif;
+  color: #fff;
+  font-size: 3.6rem; }
+  @media only screen and (min-width: 751px) {
+    .txt-btn {
+      font-size: 3.6rem; } }
+  @media only screen and (min-width: 1271px) {
+    .txt-btn {
+      font-size: 6rem; } }
+  .txt-btn .arrow {
+    display: inline-block;
+    background-image: url(../img/arrow_right.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 5rem;
+    height: 5rem; }
+    @media only screen and (min-width: 751px) {
+      .txt-btn .arrow {
+        width: 5rem;
+        height: 5rem; } }
+    @media only screen and (min-width: 1271px) {
+      .txt-btn .arrow {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 3rem; } }
+
+#trailer-btn {
+  margin: 5rem 0 0 5rem; }
+  @media only screen and (min-width: 751px) {
+    #trailer-btn {
+      margin: 15rem 0 5rem 60rem; } }
+  @media only screen and (min-width: 1271px) {
+    #trailer-btn {
+      margin: 15rem 0 5rem 60rem; } }
+
+#trailer {
+  display: inline-block;
+  background-image: url(../img/videochat.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top left;
+  width: 75rem;
+  height: 66rem; }
+  @media only screen and (min-width: 751px) {
+    #trailer {
+      width: 127rem;
+      height: 66rem; } }
+  @media only screen and (min-width: 1271px) {
+    #trailer {
+      width: 160rem;
+      height: 90rem; } }
+
 .section-header {
   padding: 0 7rem; }
   @media only screen and (min-width: 751px) {

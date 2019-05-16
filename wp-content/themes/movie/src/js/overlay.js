@@ -140,6 +140,7 @@
 		var hires = entry.attr('data-hires');
 		var vidid = entry.attr('data-vidid');
 		var vidfile = entry.attr('data-vidfile');
+		var vidtype = entry.attr('data-vidtype');
 		var width = parseInt(entry.attr('data-hires-w'));
 		var height = parseInt(entry.attr('data-hires-h'));
 		trace.log("width = "+width+" height = "+height);
@@ -154,9 +155,12 @@
 		trace.log("hires = "+hires+" vidid = "+vidid);
 
 		if(vidid != undefined && vidid != "") {
-			trace.log("this is a video");
+			trace.log("this is a video vidtype = "+vidtype);
 			dom.content.html('');
-			dom.content.html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+vidid+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+
+			if(vidtype == "youtube") dom.content.html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+vidid+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			if(vidtype == "vimeo") dom.content.html('<iframe src="https://player.vimeo.com/video/'+vidid+'" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
+
 			dom.content.addClass('videos');
 		} else {
 			dom.content.removeClass('videos');	

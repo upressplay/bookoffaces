@@ -37,20 +37,12 @@
 		wp_reset_postdata();
 	?>
 
-	<?php 
-	$args = array(
-	   'category_name'		=>'quote',
-	    'posts_per_page'	=> 1,
-		'offset'			=> 1
-	);
-	$query = new WP_Query( $args );
-	while ( $query->have_posts() ) : $query->the_post(); 
-
-	   get_template_part( 'thumb-quote' );	
-
-	endwhile; 
-	wp_reset_postdata();
-	?>
+	<div id="trailer" class="videos" data-vidid="278367952" data-vidtype="vimeo">
+		<div id="trailer-btn" class="txt-btn">
+			Trailer<div class="arrow"></div>
+		</div>
+	</div>
+	
 	<div id="headlines" class="gallery">
 		<div class="section-title">
 			Updates
@@ -96,6 +88,21 @@
 			</div><!-- more-btn -->
 		</a>
 	</div><!-- updates -->
+
+	<?php 
+	$args = array(
+	   'category_name'		=>'quote',
+	    'posts_per_page'	=> 1,
+		'offset'			=> 1
+	);
+	$query = new WP_Query( $args );
+	while ( $query->have_posts() ) : $query->the_post(); 
+
+	   get_template_part( 'thumb-quote' );	
+
+	endwhile; 
+	wp_reset_postdata();
+	?>
 	<div id="castcrew" class="gallery">
 		<div class="section-title">
 			Cast/Crew
@@ -135,51 +142,7 @@
 			<?php echo $pips; ?>
 		</div><!-- pips -->
 	</div><!-- headlines -->
-	<div id="videos" class="gallery">
-		<div class="section-title">
-			Videos
-		</div>
-		<div class="container">
-			<div class="gallery-arrow left">
-			</div>
-			<div class="holder">
-				<div class="thumbs">
-				<?php 
-					$pip = '<div class="pip"></div>';
-					$pips = '';
-					$count = 0;
-					$args = array(
-					   'category_name'		=>'videos',
-					    'posts_per_page'	=> 10,
-						'orderby'			=> 'date'
-					);
-					$query = new WP_Query( $args );
-					while ( $query->have_posts() ) : $query->the_post(); 
-					   	get_template_part( 'thumb-videos' );	
-					   	$count++;
-					   	if($count%2 != 0){
-					   		$pips .= $pip;
-					   		//$count =0;
-					   	}
-
-				 endwhile; 
-				 wp_reset_postdata();
-				?>
-				</div><!-- thumbs -->
-			</div><!-- holder -->
-			<div class="gallery-arrow right active">
-			</div>
-
-		</div><!-- container -->
-		<div class="pips">
-			<?php echo $pips; ?>
-		</div><!-- pips -->
-		<a href="/videos" target="_self">
-			<div id="videos-more" class="more-btn">
-				MORE
-			</div><!-- more-btn -->
-		</a>
-	</div><!-- videos -->
+	
 	<div id="photos" class="gallery">
 		<div class="section-title">
 			PHOTOS
