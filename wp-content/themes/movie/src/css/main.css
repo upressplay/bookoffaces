@@ -755,6 +755,53 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start; }
+  .single .featured-img {
+    width: 70rem;
+    margin: 0 2.5rem 4rem 2.5rem; }
+    @media only screen and (min-width: 751px) {
+      .single .featured-img {
+        width: 80rem;
+        margin: 0 4rem 4rem 0; } }
+    @media only screen and (min-width: 1271px) {
+      .single .featured-img {
+        width: 80rem;
+        margin: 0 4rem 4rem 4rem; } }
+  .single .info {
+    width: 70rem;
+    margin: 0 2.5rem 4rem 2.5rem; }
+    @media only screen and (min-width: 751px) {
+      .single .info {
+        width: 80rem;
+        margin: 0 4rem 4rem 0; } }
+    @media only screen and (min-width: 1271px) {
+      .single .info {
+        width: 80rem;
+        margin: 0 4rem 4rem 4rem; } }
+    .single .info .title {
+      font-family: "oldnewspapertypesregular", serif;
+      color: #fff;
+      font-size: 3.3rem;
+      line-height: 4rem;
+      margin-bottom: 1.5rem; }
+      @media only screen and (min-width: 751px) {
+        .single .info .title {
+          font-size: 2.8rem;
+          line-height: 3.2rem;
+          margin-bottom: 1.5rem; } }
+      @media only screen and (min-width: 1271px) {
+        .single .info .title {
+          font-size: 3.6rem;
+          line-height: 4rem;
+          margin-bottom: 1rem; } }
+    .single .info .sub {
+      font-family: "oldnewspapertypesregular", serif;
+      margin-bottom: 1.5rem; }
+      @media only screen and (min-width: 751px) {
+        .single .info .sub {
+          margin-bottom: 1.5rem; } }
+      @media only screen and (min-width: 1271px) {
+        .single .info .sub {
+          margin-bottom: 1.4rem; } }
 
 .gallery {
   text-align: center;
@@ -927,18 +974,9 @@ header {
   background-color: #000;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
   opacity: 0;
   display: none;
-  transition: all 0.25s ease-in-out;
-  font-size: 3.6rem; }
-  @media only screen and (min-width: 751px) {
-    .overlay {
-      font-size: 3.6rem; } }
-  @media only screen and (min-width: 1271px) {
-    .overlay {
-      font-size: 3.6rem; } }
+  transition: all 0.25s ease-in-out; }
   .overlay.active {
     display: block;
     opacity: 1; }
@@ -950,35 +988,99 @@ header {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center; }
-    .overlay .holder .content {
+    .overlay .holder .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-y: auto;
       width: 70rem; }
       @media only screen and (min-width: 751px) {
-        .overlay .holder .content {
+        .overlay .holder .container {
           width: 100rem; } }
       @media only screen and (min-width: 1271px) {
-        .overlay .holder .content {
-          width: 100rem; } }
-      .overlay .holder .content.videos {
+        .overlay .holder .container {
+          width: 140rem; } }
+      .overlay .holder .container.videos {
         height: 42.2rem; }
         @media only screen and (min-width: 751px) {
-          .overlay .holder .content.videos {
+          .overlay .holder .container.videos {
             width: 100rem;
             height: 56.2rem; } }
         @media only screen and (min-width: 1271px) {
-          .overlay .holder .content.videos {
+          .overlay .holder .container.videos {
             width: 100rem;
             height: 56.2rem; } }
+      .overlay .holder .container.photos {
+        height: 42.2rem; }
+        @media only screen and (min-width: 751px) {
+          .overlay .holder .container.photos {
+            width: 100rem; } }
+        @media only screen and (min-width: 1271px) {
+          .overlay .holder .container.photos {
+            width: 100rem; } }
+      .overlay .holder .container .featured-img {
+        width: 70rem;
+        margin: 0 2.5rem 4rem 2.5rem; }
+        @media only screen and (min-width: 751px) {
+          .overlay .holder .container .featured-img {
+            width: 80rem;
+            margin: 0 4rem 4rem 0; } }
+        @media only screen and (min-width: 1271px) {
+          .overlay .holder .container .featured-img {
+            width: 80rem;
+            margin: 4rem; } }
+      .overlay .holder .container .info {
+        width: 70rem;
+        margin: 0 2.5rem 4rem 2.5rem; }
+        @media only screen and (min-width: 751px) {
+          .overlay .holder .container .info {
+            width: 80rem;
+            margin: 4rem 0 4rem 0; } }
+        @media only screen and (min-width: 1271px) {
+          .overlay .holder .container .info {
+            width: 40rem;
+            margin: 4rem 0 4rem 0; } }
+        .overlay .holder .container .info .title {
+          font-family: "oldnewspapertypesregular", serif;
+          color: #fff;
+          font-size: 3.3rem;
+          line-height: 4rem;
+          margin-bottom: 1.5rem; }
+          @media only screen and (min-width: 751px) {
+            .overlay .holder .container .info .title {
+              font-size: 2.8rem;
+              line-height: 3.2rem;
+              margin-bottom: 1.5rem; } }
+          @media only screen and (min-width: 1271px) {
+            .overlay .holder .container .info .title {
+              font-size: 3.6rem;
+              line-height: 4rem;
+              margin-bottom: 1rem; } }
+        .overlay .holder .container .info .sub {
+          font-family: "oldnewspapertypesregular", serif;
+          margin-bottom: 1.5rem; }
+          @media only screen and (min-width: 751px) {
+            .overlay .holder .container .info .sub {
+              margin-bottom: 1.5rem; } }
+          @media only screen and (min-width: 1271px) {
+            .overlay .holder .container .info .sub {
+              margin-bottom: 1.4rem; } }
   .overlay .close-btn {
     cursor: pointer;
     position: absolute;
+    font-size: 3.6rem;
     top: 5rem;
     right: 5rem; }
     @media only screen and (min-width: 751px) {
       .overlay .close-btn {
+        font-size: 3.6rem;
         top: 5rem;
         right: 5rem; } }
     @media only screen and (min-width: 1271px) {
       .overlay .close-btn {
+        font-size: 3.6rem;
         top: 5rem;
         right: 5rem; } }
 
@@ -1011,57 +1113,8 @@ header {
   .overlay-arrow.right {
     background-image: url(../img/arrow_right.png); }
 
-.gallery-arrow:hover.active {
+.overlay-arrow:hover.active {
   color: #eac80b; }
-
-.featured-img {
-  width: 70rem;
-  margin: 0 2.5rem 4rem 2.5rem; }
-  @media only screen and (min-width: 751px) {
-    .featured-img {
-      width: 80rem;
-      margin: 0 4rem 4rem 0; } }
-  @media only screen and (min-width: 1271px) {
-    .featured-img {
-      width: 80rem;
-      margin: 0 4rem 4rem 4rem; } }
-
-.info {
-  width: 70rem;
-  margin: 0 2.5rem 4rem 2.5rem; }
-  @media only screen and (min-width: 751px) {
-    .info {
-      width: 80rem;
-      margin: 0 4rem 4rem 0; } }
-  @media only screen and (min-width: 1271px) {
-    .info {
-      width: 80rem;
-      margin: 0 4rem 4rem 4rem; } }
-  .info .title {
-    font-family: "oldnewspapertypesregular", serif;
-    color: #fff;
-    font-size: 3.3rem;
-    line-height: 4rem;
-    margin-bottom: 1.5rem; }
-    @media only screen and (min-width: 751px) {
-      .info .title {
-        font-size: 2.8rem;
-        line-height: 3.2rem;
-        margin-bottom: 1.5rem; } }
-    @media only screen and (min-width: 1271px) {
-      .info .title {
-        font-size: 3.6rem;
-        line-height: 4rem;
-        margin-bottom: 1rem; } }
-  .info .sub {
-    font-family: "oldnewspapertypesregular", serif;
-    margin-bottom: 1.5rem; }
-    @media only screen and (min-width: 751px) {
-      .info .sub {
-        margin-bottom: 1.5rem; } }
-    @media only screen and (min-width: 1271px) {
-      .info .sub {
-        margin-bottom: 1.4rem; } }
 
 #footer {
   display: flex;

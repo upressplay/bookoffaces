@@ -6,7 +6,7 @@
 	<div class="holder">
 		<div class="overlay-arrow left active">
 		</div>
-		<div class="content">
+		<div class="container">
 		</div>
 		<div class="overlay-arrow right active">
 		</div>

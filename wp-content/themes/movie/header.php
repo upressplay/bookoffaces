@@ -51,10 +51,11 @@
 					wp_reset_postdata();
 				 ?>
 				</div>
-
-				<div class="company-logo">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/cathartic_logo.jpg"/>
-				</div>
+				<a href="http://catharticentertainment.com/" target="_blank">
+					<div class="company-logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/cathartic_logo.jpg"/>
+					</div>
+				</a>
 				<div class="presents">
 					presents
 				</div>

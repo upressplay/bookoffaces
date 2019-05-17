@@ -1,4 +1,4 @@
-<a href="<?php echo get_field('url');?>" target="_blank">
+<a href="<?php the_permalink(); ?>" class="article" data-hires="<?php echo get_the_post_thumbnail_url($post->ID,'full'); ?>">
 	<div class="gallery-thumb">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="thumb-img"> 
@@ -21,7 +21,9 @@
 			</div> 
 			<?php endif; ?>
 		</div><!-- info --> 
-		
+		<div class="content">
+			<?php echo get_the_content(); ?>
+		</div>
 	</div> <!-- thumb -->
 </a> 
 

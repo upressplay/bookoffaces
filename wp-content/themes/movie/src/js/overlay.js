@@ -16,9 +16,9 @@
 
 	function init() {
 
-		videos = {'current':-1,'next':-1, 'content':[]};
-		photos = {'current':-1,'next':-1, 'content':[]};
-		articles = {'current':-1,'next':-1, 'content':[]};
+		videos = {'id':'videos','content':[]};
+		photos = {'id':'photos', 'content':[]};
+		articles = {'id':'articles', 'content':[]};
 		
 		dom.site = $("#site");
 		trace.log(id+" render!");
@@ -67,7 +67,7 @@
         });
 
         dom.holder = dom.overlay.find('.holder');
-        dom.content = dom.overlay.find('.content');
+        dom.container = dom.overlay.find('.container');
 
         dom.left = dom.overlay.find('.left');
         dom.right = dom.overlay.find('.right');
@@ -128,14 +128,15 @@
 		overlayOpen = false;
 		trace.log('closeOverlay');
 		dom.overlay.removeClass('active');
-		dom.content.html('');
+		dom.container.html('');
 		//closePost();	
 	}
 
 	/* opens the Content holer, while keeping the overlay open */
 	function openContent(id) {
 		trace.log('openContent id = '+id);
-		var entry = currentContent.content[id];		
+		var entry = currentContent.content[id];
+		var type = 	currentContent.id;	
 
 		var hires = entry.attr('data-hires');
 		var vidid = entry.attr('data-vidid');
@@ -146,49 +147,53 @@
 		var content = entry.find('.content').html();
 		var title = entry.find('.title').html();
 		var sub = entry.find('.sub').html();
+
 		trace.log("content = "+content+" height = "+height);
 
 		if(height >= width) {
-			dom.content.addClass('tall');
+			dom.container.addClass('tall');
 		} else {
 			trace.log('remove tall');
-			dom.content.removeClass('tall');	
+			dom.container.removeClass('tall');	
 		}
 		current = id;
 		trace.log("hires = "+hires+" vidid = "+vidid);
-		dom.content.html('');
+		dom.container.html('');
 
-		if(vidid != undefined && vidid != "") {
+
+		if(type == "videos") {
 			trace.log("this is a video vidtype = "+vidtype);
-			if(vidtype == "youtube") dom.content.html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+vidid+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-			if(vidtype == "vimeo") dom.content.html('<iframe src="https://player.vimeo.com/video/'+vidid+'" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
+			if(vidtype == "youtube") dom.container.html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+vidid+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			if(vidtype == "vimeo") dom.container.html('<iframe src="https://player.vimeo.com/video/'+vidid+'" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
 
-			dom.content.addClass('videos');
+			dom.container.addClass('videos');
 		} else {
-			dom.content.removeClass('videos');	
+			dom.container.removeClass('videos');	
 		}
 
-		if(hires != undefined && hires != "") {
+		if(type == "photos") {
 			trace.log("this is a photo");
-			
-			dom.content.append('<div class="featured-img"><img src="'+hires+'"/></div>');
+			dom.container.addClass('photos');
+			dom.container.append('<img src="'+hires+'"/>');
 
+		} else {
+			dom.container.removeClass('photos');	
 		}
 
-		if(content != undefined && content != "") {
+		if(type == "articles") {
 			trace.log("this is a article");
-			dom.content.append('<div class="info"><h1 class="title">'+title+'</h1> <h2 class="sub">'+sub+'</h2> <div class="content">'+content+'</div> </div>');
+			dom.container.append('<div class="featured-img"><img src="'+hires+'"/></div><div class="info"><div class="title">'+title+'</div> <div class="sub">'+sub+'</div> <div class="content">'+content+'</div> </div>');
 
 		}
 
 
-		dom.content.addClass('active');
+		dom.container.addClass('active');
 	}
 
 	/* passes next content id to openContent after closing the Content holder */
 	function closeContent(id) {
 		trace.log("closeContent "); 
-		dom.content.removeClass('active');
+		dom.container.removeClass('active');
 		openContent(id);
 	}
 

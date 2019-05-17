@@ -4,22 +4,13 @@
     background-color: #000;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    
     opacity: 0;
     display: none;
     transition: all 0.25s ease-in-out; 
     
 
-    font-size: rem(36,$text-bp-sm);
-
-    @include bp-medium {
-        font-size: rem(36,$text-bp-md);
-    }
-
-    @include bp-large {
-        font-size: rem(36,$text-bp-lg);
-    }
+    
     &.active {
         display: block;
         opacity: 1;    
@@ -33,8 +24,13 @@
         flex-wrap:nowrap;
         justify-content: center;
         align-items: center;
-        .content {
-
+        .container {
+            display: flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y:auto;
             width: rem(700,$text-bp-md);
 
             @include bp-medium {
@@ -42,11 +38,13 @@
             }
 
             @include bp-large {
-                width: rem(1000,$text-bp-lg);
+                width: rem(1400,$text-bp-lg);
 
             }
             &.videos {
+
                 height: rem(422,$text-bp-sm);
+
                 @include bp-medium {
                     width: rem(1000,$text-bp-md);
                     height: rem(562,$text-bp-md);
@@ -58,19 +56,99 @@
 
                 }   
             }
+            &.photos {
+
+                height: rem(422,$text-bp-sm);
+                
+                @include bp-medium {
+                    width: rem(1000,$text-bp-md);
+                }
+
+                @include bp-large {
+                    width: rem(1000,$text-bp-lg);
+
+                }   
+            }
+            .featured-img {
+                width: rem(700,$text-bp-sm);
+                margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+
+                @include bp-medium {
+                    width: rem(800,$text-bp-md);
+                    margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
+                }
+
+                @include bp-large {
+                    width: rem(800,$text-bp-lg);
+                    margin:rem(40,$text-bp-lg);
+                }  
+            } 
+            .info {
+                width: rem(700,$text-bp-sm);
+                margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+
+                @include bp-medium {
+                    width: rem(800,$text-bp-md);
+                    margin:rem(40,$text-bp-md) 0 rem(40,$text-bp-md) 0;
+                }
+
+                @include bp-large {
+                    width: rem(400,$text-bp-lg);
+                    margin: rem(40,$text-bp-lg) 0 rem(40,$text-bp-lg) 0;
+                }  
+                .title {
+                    font-family: $headline-font;
+                    color:#fff;
+                    font-size:rem(33,$text-bp-sm);
+                    line-height:rem(40,$text-bp-sm);
+                    margin-bottom: rem(15,$text-bp-sm);
+                     
+                    @include bp-medium {
+                        font-size:rem(28,$text-bp-md);
+                        line-height:rem(32,$text-bp-md);
+                        margin-bottom: rem(15,$text-bp-md);
+                    }
+
+                    @include bp-large {
+                        font-size:rem(36,$text-bp-lg);
+                        line-height:rem(40,$text-bp-lg);
+                        margin-bottom: rem(10,$text-bp-lg);
+                    }    
+                }
+                .sub {
+                    font-family: $headline-font;
+                    margin-bottom: rem(15,$text-bp-sm);
+                     
+                    @include bp-medium {
+                        margin-bottom: rem(15,$text-bp-md);
+                    }
+
+                    @include bp-large {
+                        margin-bottom: rem(14,$text-bp-lg);
+                    }   
+                }
+                .content {
+                     
+                }    
+            } 
         }
+
     }
     .close-btn {
         cursor: pointer;
         position: absolute;
+
+        font-size: rem(36,$text-bp-sm);
         top: rem(50,$text-bp-sm);
         right: rem(50,$text-bp-sm);
         @include bp-medium {
+            font-size: rem(36,$text-bp-md);
             top: rem(50,$text-bp-md);
             right: rem(50,$text-bp-md);
         }
 
         @include bp-large {
+            font-size: rem(36,$text-bp-lg);
             top: rem(50,$text-bp-lg);
             right: rem(50,$text-bp-lg);
         }  
@@ -112,69 +190,11 @@
     transition: all 0.25s ease-in-out;  
 }
 
-.gallery-arrow:hover {
+.overlay-arrow:hover {
     &.active {
         color: $color-yellow;    
     }
 
 }
 
-.featured-img {
-        width: rem(700,$text-bp-sm);
-        margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
-
-        @include bp-medium {
-            width: rem(800,$text-bp-md);
-            margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
-        }
-
-        @include bp-large {
-            width: rem(800,$text-bp-lg);
-            margin:0 rem(40,$text-bp-lg) rem(40,$text-bp-lg) rem(40,$text-bp-lg) ;
-        }  
-    } 
-    .info {
-        width: rem(700,$text-bp-sm);
-        margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
-
-        @include bp-medium {
-            width: rem(800,$text-bp-md);
-            margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
-        }
-
-        @include bp-large {
-            width: rem(800,$text-bp-lg);
-            margin:0 rem(40,$text-bp-lg) rem(40,$text-bp-lg) rem(40,$text-bp-lg) ;
-        }  
-        .title {
-            font-family: $headline-font;
-            color:#fff;
-            font-size:rem(33,$text-bp-sm);
-            line-height:rem(40,$text-bp-sm);
-            margin-bottom: rem(15,$text-bp-sm);
-             
-            @include bp-medium {
-                font-size:rem(28,$text-bp-md);
-                line-height:rem(32,$text-bp-md);
-                margin-bottom: rem(15,$text-bp-md);
-            }
-
-            @include bp-large {
-                font-size:rem(36,$text-bp-lg);
-                line-height:rem(40,$text-bp-lg);
-                margin-bottom: rem(10,$text-bp-lg);
-            }    
-        }
-        .sub {
-            font-family: $headline-font;
-            margin-bottom: rem(15,$text-bp-sm);
-             
-            @include bp-medium {
-                margin-bottom: rem(15,$text-bp-md);
-            }
-
-            @include bp-large {
-                margin-bottom: rem(14,$text-bp-lg);
-            }   
-        }    
-    } 
+ 
