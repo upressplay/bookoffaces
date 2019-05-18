@@ -12,6 +12,7 @@
 	videos = {},
 	photos = {},
 	articles = {},
+	bios = {},
 	overlayOpen = false;
 
 	function init() {
@@ -19,6 +20,7 @@
 		videos = {'id':'videos','content':[]};
 		photos = {'id':'photos', 'content':[]};
 		articles = {'id':'articles', 'content':[]};
+		bios = {'id':'bios', 'content':[]};
 		
 		dom.site = $("#site");
 		trace.log(id+" render!");
@@ -58,6 +60,18 @@
                 openOverlay(index,articles);
             });
 			articles.content.push(btn);
+		});
+
+		dom.bios = $( ".bios" );
+		dom.bios.each(function( index ) {
+
+			var btn = $(this);
+			btn.attr('data-id',index);
+			btn.click(function(event) {
+				event.preventDefault();
+                openOverlay(index,bios);
+            });
+			bios.content.push(btn);
 		});
 
 		dom.overlay = $('.overlay');
@@ -180,10 +194,36 @@
 			dom.container.removeClass('photos');	
 		}
 
+
 		if(type == "articles") {
 			trace.log("this is a article");
-			dom.container.append('<div class="featured-img"><img src="'+hires+'"/></div><div class="info"><div class="title">'+title+'</div> <div class="sub">'+sub+'</div> <div class="content">'+content+'</div> </div>');
+			dom.container.addClass('articles');
+			var article = '<div class="featured-img"><img src="'+hires+'"/></div><!-- featured-img -->';
+					article +='<span class="title">'+title+'</span>';
+					article +='<span class="sub">'+sub+'</span>';
+					article +='<span class="content">'+content+'</span>';
 
+			dom.container.append(article);
+
+		} else {
+			dom.container.removeClass('articles');	
+		}
+
+		if(type == "bios") {
+			trace.log("this is a bio");
+			dom.container.addClass('bios');
+
+			var bio = '<img class="featured-img" src="'+hires+'"/>';
+				//bio +='<span class="info">';
+					bio +='<span class="title">'+title+'</span>';
+					bio +='<span class="sub">'+sub+'</span>';
+					bio +='<span class="content">'+content+'</span>';
+				//bio +='</span><!-- info -->';
+
+			dom.container.append(bio);
+
+		} else {
+			dom.container.removeClass('bios');	
 		}
 
 

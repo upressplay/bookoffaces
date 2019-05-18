@@ -4,7 +4,8 @@
     background-color: #000;
     width: 100vw;
     height: 100vh;
-    
+    overflow-x:hidden;
+    overflow-y:auto;
     opacity: 0;
     display: none;
     transition: all 0.25s ease-in-out; 
@@ -25,22 +26,8 @@
         justify-content: center;
         align-items: center;
         .container {
-            display: flex;
-            flex-direction:row;
-            flex-wrap:nowrap;
-            justify-content: center;
-            align-items: flex-start;
-            overflow-y:auto;
-            width: rem(700,$text-bp-md);
-
-            @include bp-medium {
-                width: rem(1000,$text-bp-md);
-            }
-
-            @include bp-large {
-                width: rem(1400,$text-bp-lg);
-
-            }
+            display: block;
+            
             &.videos {
 
                 height: rem(422,$text-bp-sm);
@@ -69,33 +56,94 @@
 
                 }   
             }
-            .featured-img {
-                width: rem(700,$text-bp-sm);
-                margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+            &.articles {
+
+                width: rem(700,$text-bp-md);
 
                 @include bp-medium {
-                    width: rem(800,$text-bp-md);
-                    margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
+                    width: rem(1000,$text-bp-md);
                 }
 
                 @include bp-large {
-                    width: rem(800,$text-bp-lg);
-                    margin:rem(40,$text-bp-lg);
+                    width: rem(1400,$text-bp-lg);
+                }
+                .featured-img {
+                    float: left;
+                    width: rem(700,$text-bp-sm);
+                    margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+
+                    @include bp-medium {
+                        width: rem(800,$text-bp-md);
+                        margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
+                    }
+
+                    @include bp-large {
+                        width: rem(400,$text-bp-lg);
+                        margin:0 rem(50,$text-bp-lg) rem(50,$text-bp-lg) rem(50,$text-bp-lg);
+                    }  
+                }
+                .info {
+                    width: rem(700,$text-bp-sm);
+                    margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+
+                    @include bp-medium {
+                        width: rem(800,$text-bp-md);
+                        margin:rem(40,$text-bp-md) 0 rem(40,$text-bp-md) 0;
+                    }
+
+                    @include bp-large {
+                        width: rem(400,$text-bp-lg);
+                        margin: rem(40,$text-bp-lg) 0 rem(40,$text-bp-lg) 0;
+                    } 
+                } 
+            }
+             &.bios {
+
+                height: rem(422,$text-bp-sm);
+                
+                @include bp-medium {
+                    width: rem(1000,$text-bp-md);
+                }
+
+                @include bp-large {
+                    width: rem(1000,$text-bp-lg);
+
                 }  
-            } 
+                .featured-img {
+                    float: left;
+                    width: rem(700,$text-bp-sm);
+                    margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+
+                    @include bp-medium {
+                        width: rem(800,$text-bp-md);
+                        margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
+                    }
+
+                    @include bp-large {
+                        width: rem(400,$text-bp-lg);
+                        margin:0 rem(50,$text-bp-lg) rem(50,$text-bp-lg) rem(50,$text-bp-lg);
+                    }  
+                }
+                .info {
+                    width: rem(700,$text-bp-sm);
+                    margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
+
+                    @include bp-medium {
+                        width: rem(800,$text-bp-md);
+                        margin:rem(40,$text-bp-md) 0 rem(40,$text-bp-md) 0;
+                    }
+
+                    @include bp-large {
+                        width: rem(400,$text-bp-lg);
+                        margin: rem(40,$text-bp-lg) 0 rem(40,$text-bp-lg) 0;
+                    } 
+                } 
+
+                
+            }
+             
             .info {
-                width: rem(700,$text-bp-sm);
-                margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
-
-                @include bp-medium {
-                    width: rem(800,$text-bp-md);
-                    margin:rem(40,$text-bp-md) 0 rem(40,$text-bp-md) 0;
-                }
-
-                @include bp-large {
-                    width: rem(400,$text-bp-lg);
-                    margin: rem(40,$text-bp-lg) 0 rem(40,$text-bp-lg) 0;
-                }  
+                 
                 .title {
                     font-family: $headline-font;
                     color:#fff;
