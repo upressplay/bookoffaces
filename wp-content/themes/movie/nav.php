@@ -37,7 +37,7 @@
 
 			}
 		?>
-		<div class="social-nav mobile">
+		<div class="social-nav">
 			<?php
 				$GLOBALS['social_btns'] = "";
 				$btn_class;

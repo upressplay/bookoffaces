@@ -7,24 +7,24 @@
 		<?php endif; ?>
 		<div class="info">
 
-			<div class="date">
-				<?php echo get_field('date'); ?>
-			</div>
-
 			<div class="title"> 
 				<?php echo get_the_title($post->ID); ?>
 			</div> 
 
-			<?php if ( !empty( get_the_excerpt() ) ) : ?>
+			<div class="date"> 
+				<?php echo get_the_date( 'l F j, Y' ); ?>
+			</div> 
+
+			<?php if ( !empty( get_the_excerpt($post->ID) ) ) : ?>
 			<div class="excerpt"> 
 				<?php echo get_the_excerpt($post->ID); ?>
 			</div> 
 			<?php endif; ?>
 		</div><!-- info --> 
 		<div class="content">
-			<?php echo get_the_content(); ?>
+			<?php the_content($post->ID); ?>
 		</div>
-	</div> <!-- thumb -->
+	</div> <!-- gallery-thumb -->
 </a> 
 
 

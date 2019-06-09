@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     overflow-x:hidden;
-    overflow-y:auto;
+    overflow-y:hidden;
     opacity: 0;
     display: none;
     transition: all 0.25s ease-in-out; 
@@ -25,6 +25,9 @@
         flex-wrap:nowrap;
         justify-content: center;
         align-items: center;
+        &.articles {
+
+        }
         .container {
             display: block;
             
@@ -45,7 +48,7 @@
             }
             &.photos {
 
-                height: rem(422,$text-bp-sm);
+                width: rem(750,$text-bp-sm);
                 
                 @include bp-medium {
                     width: rem(1000,$text-bp-md);
@@ -59,6 +62,9 @@
             &.articles {
 
                 width: rem(700,$text-bp-md);
+                height: 90vh;
+                overflow-x:hidden;
+                overflow-y:auto;
 
                 @include bp-medium {
                     width: rem(1000,$text-bp-md);
@@ -66,6 +72,7 @@
 
                 @include bp-large {
                     width: rem(1400,$text-bp-lg);
+                    padding: rem(50,$text-bp-lg) 0;
                 }
                 .featured-img {
                     float: left;
@@ -78,8 +85,8 @@
                     }
 
                     @include bp-large {
-                        width: rem(400,$text-bp-lg);
-                        margin:0 rem(50,$text-bp-lg) rem(50,$text-bp-lg) rem(50,$text-bp-lg);
+                        width: rem(600,$text-bp-lg);
+                        margin:0 rem(50,$text-bp-lg) rem(50,$text-bp-lg) 0;
                     }  
                 }
                 .info {
@@ -142,43 +149,44 @@
                 
             }
              
-            .info {
                  
-                .title {
-                    font-family: $headline-font;
-                    color:#fff;
-                    font-size:rem(33,$text-bp-sm);
-                    line-height:rem(40,$text-bp-sm);
-                    margin-bottom: rem(15,$text-bp-sm);
-                     
-                    @include bp-medium {
-                        font-size:rem(28,$text-bp-md);
-                        line-height:rem(32,$text-bp-md);
-                        margin-bottom: rem(15,$text-bp-md);
-                    }
-
-                    @include bp-large {
-                        font-size:rem(36,$text-bp-lg);
-                        line-height:rem(40,$text-bp-lg);
-                        margin-bottom: rem(10,$text-bp-lg);
-                    }    
+            .title {
+                font-family: $headline-font;
+                color:#fff;
+                width: 100%;
+                font-size:rem(33,$text-bp-sm);
+                line-height:rem(40,$text-bp-sm);
+                margin-bottom: rem(15,$text-bp-sm);
+                 
+                @include bp-medium {
+                    font-size:rem(28,$text-bp-md);
+                    line-height:rem(32,$text-bp-md);
+                    margin-bottom: rem(15,$text-bp-md);
                 }
-                .sub {
-                    font-family: $headline-font;
-                    margin-bottom: rem(15,$text-bp-sm);
-                     
-                    @include bp-medium {
-                        margin-bottom: rem(15,$text-bp-md);
-                    }
 
-                    @include bp-large {
-                        margin-bottom: rem(14,$text-bp-lg);
-                    }   
-                }
-                .content {
-                     
+                @include bp-large {
+                    font-size:rem(36,$text-bp-lg);
+                    line-height:rem(40,$text-bp-lg);
+                    margin-bottom: rem(20,$text-bp-lg);
                 }    
-            } 
+            }
+            .sub {
+                font-family: $headline-font;
+                width: 100%;
+                margin-bottom: rem(15,$text-bp-sm);
+                 
+                @include bp-medium {
+                    margin-bottom: rem(15,$text-bp-md);
+                }
+
+                @include bp-large {
+                    margin-bottom: rem(20,$text-bp-lg);
+                }   
+            }
+            .content {
+                 
+            }    
+             
         }
 
     }

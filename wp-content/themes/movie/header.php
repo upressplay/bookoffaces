@@ -68,4 +68,25 @@
 					</div>
 				</a>
 			</header>
+			<div class="social-nav">
+				<?php
+					$GLOBALS['social_btns'] = "";
+					$btn_class;
+					$menu_items = wp_get_nav_menu_items( 'Social Menu' );
+					foreach ( (array) $menu_items as $key => $menu_item ) {
+					    $title = $menu_item->title;
+					    $url = $menu_item->url;
+					    $attr_title = $menu_item->attr_title;
+					    $icon_class = get_field('icon_class', $menu_item);
+					    $btn_class = "social-btn ";
+					    $GLOBALS['social_btns'] .= '<a href="'.$url.'" target="_blank" >
+	                        <div class="'.$btn_class.'">
+	                          <span class="'.$icon_class.'" aria-hidden="true" ></span>
+	                          <span class="screen-reader-text">'.$title.'</span>
+	                        </div>
+	                    </a>'; 
+					}
+					echo $GLOBALS['social_btns'];
+				?>
+			</div>	
 			

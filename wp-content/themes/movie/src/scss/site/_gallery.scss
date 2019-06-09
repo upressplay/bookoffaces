@@ -176,7 +176,7 @@
             }    
         }
         >.date {
-            font-weight: 700;
+            font-family: $headline-font;
             margin-bottom: rem(15,$text-bp-sm);
              
             @include bp-medium {

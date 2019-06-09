@@ -93,8 +93,15 @@ nav {
 
 
 .social-nav {
+    position: fixed;
+    top:0;
+    left:0;
     text-align: center;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content:center;
+    height:100vh;
     
     @include bp-medium {
     }
@@ -155,12 +162,12 @@ nav {
 
     @include bp-large {
         font-size: rem(27,$text-bp-lg);
-        padding: rem(20,$text-bp-lg) rem(10,$text-bp-lg);
+        padding: rem(10,$text-bp-lg) rem(20,$text-bp-lg);
     }
 }
 
 .social-btn:hover {
-    color: #000;
+    color: $color-red;
     text-decoration: none;
 }
 

@@ -59,7 +59,8 @@
 					$args = array(
 					   'category_name'		=>'updates',
 					    'posts_per_page'	=> 10,
-						'orderby'			=> 'date'
+						'orderby'			=> 'date',
+						'order'				=> 'DESC'
 					);
 					$query = new WP_Query( $args );
 					while ( $query->have_posts() ) : $query->the_post(); 
@@ -71,7 +72,6 @@
 					   	}
 
 				 endwhile; 
-				 wp_reset_postdata();
 				?>
 				</div><!-- thumbs -->
 			</div><!-- holder -->
@@ -82,11 +82,11 @@
 		<div class="pips">
 			<?php echo $pips; ?>
 		</div><!-- pips -->
-		<a href="http://billmaher.tumblr.com" target="_blank">
+		<!-- <a href="/updates">
 			<div id="headlines-more" class="more-btn">
 				MORE<div class="arrow"></div>
-			</div><!-- more-btn -->
-		</a>
+			</div>
+		</a> -->
 	</div><!-- updates -->
 
 	<?php 

@@ -160,9 +160,11 @@
 		var height = parseInt(entry.attr('data-hires-h'));
 		var content = entry.find('.content').html();
 		var title = entry.find('.title').html();
+		var date = entry.find('.date').html();
 		var sub = entry.find('.sub').html();
 
-		trace.log("content = "+content+" height = "+height);
+		trace.log("width = "+width+" height = "+height);
+		trace.log("date = "+date+" sub = "+sub);
 
 		if(height >= width) {
 			dom.container.addClass('tall');
@@ -171,7 +173,7 @@
 			dom.container.removeClass('tall');	
 		}
 		current = id;
-		trace.log("hires = "+hires+" vidid = "+vidid);
+		trace.log("content = "+content+" vidid = "+vidid);
 		dom.container.html('');
 
 
@@ -197,11 +199,13 @@
 
 		if(type == "articles") {
 			trace.log("this is a article");
+			dom.holder.addClass('articles');
 			dom.container.addClass('articles');
 			var article = '<div class="featured-img"><img src="'+hires+'"/></div><!-- featured-img -->';
-					article +='<span class="title">'+title+'</span>';
-					article +='<span class="sub">'+sub+'</span>';
-					article +='<span class="content">'+content+'</span>';
+					article +='<div class="title">'+title+'</div>';
+				if(sub != undefined) article +='<div class="sub">'+sub+'</div>';
+				if(date != undefined) article +='<div class="sub">'+date+'</div>';
+					article +='<div class="content">'+content+'</div>';
 
 			dom.container.append(article);
 
@@ -215,9 +219,10 @@
 
 			var bio = '<img class="featured-img" src="'+hires+'"/>';
 				//bio +='<span class="info">';
-					bio +='<span class="title">'+title+'</span>';
-					bio +='<span class="sub">'+sub+'</span>';
-					bio +='<span class="content">'+content+'</span>';
+					bio +='<div class="title">'+title+'</div>';
+		if(sub != undefined) bio +='<div class="sub">'+sub+'</div>';
+		if(date != undefined) bio +='<div class="sub">'+date+'</div>';
+					bio +='<div class="content">'+content+'</div>';
 				//bio +='</span><!-- info -->';
 
 			dom.container.append(bio);
