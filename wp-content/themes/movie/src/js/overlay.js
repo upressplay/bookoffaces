@@ -158,7 +158,7 @@
 		var vidtype = entry.attr('data-vidtype');
 		var width = parseInt(entry.attr('data-hires-w'));
 		var height = parseInt(entry.attr('data-hires-h'));
-		var content = entry.find('.content').html();
+		var content = entry.parent().find('.content').html();
 		var title = entry.find('.title').html();
 		var date = entry.find('.date').html();
 		var sub = entry.find('.sub').html();

@@ -72,6 +72,7 @@
 					   	}
 
 				 endwhile; 
+				 wp_reset_postdata();
 				?>
 				</div><!-- thumbs -->
 			</div><!-- holder -->
