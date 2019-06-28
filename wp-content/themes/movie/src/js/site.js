@@ -1,27 +1,10 @@
-;(function(site, undefined){
+(function(){
 	"use strict";
 
 
-	// Cache Modules
-	var trace = site.utilities.trace,
-	utils = site.utils,
-	breakPoint = "";
-
 	function init() {
-		render();
     }
 
-    function render() {
-    	trace.push('render');
-
-    	breakPoint = utils.getBreakPoint();
-    	
-    	if(breakPoint != "bp-small") {  
-
-        }
-    }
-
-	trace.push('yo');
 
 	$(function(){
 		init();

@@ -1,13 +1,16 @@
-;(function(obj, undefined){
+(function(site){
 	"use strict";
 
 	var id = "utils",
-	trace = site.utilities.trace,
+	trace = {push: function() {}},
 	maxWidth = 1600,
     screenBpSm = 750,
     screenBpMd = 1270,
     screenBpLg = 1600;
 
+    function init() {
+        trace = site.utilities && site.utilities.trace ? site.utilities.trace : {push: function() {}};
+    }
 
     function getSegments(id) {
 
@@ -128,5 +131,8 @@
         screenBpMd:screenBpMd,
         screenBpLg:screenBpLg
 	};
+    $(function(){
+        init();
+    });
 
 })(window.site=window.site || {});

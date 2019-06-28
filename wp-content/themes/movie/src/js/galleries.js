@@ -1,14 +1,9 @@
-;(function(site, undefined){
+(function(site){
 	"use strict";
 
-	var id = "galleries",
-	data = [],
+	var data = [],
 	dom = {},
-	trace = site.utilities.trace,
-	utils = site.utils,
-	current = 0,
-	imgLoad = [],
-	loadCount = 0;
+	trace = {push: function() {}};
 
 	function init() {
 		
@@ -16,56 +11,47 @@
 	}
 
 	function render() {
+		
+		trace = site.utilities && site.utilities.trace ? site.utilities.trace : {push: function() {}};
 
-        dom.galleries = $( ".gallery" );
+		dom.galleries = $( ".gallery" );
 
-        // look for all a galleries and set up pips and arrows //
+		// look for all a galleries and set up pips and arrows //
 
-        dom.galleries.each(function( index ) {
-        	var gallery = $(this);
-        	var left = gallery.find('.left');
-        	var right = gallery.find('.right');
-        	var thumbs = gallery.find('.thumbs');
-        	var holder = gallery.find('.holder');
-        	var pip = gallery.find('.pip');
-        	var pips = [];
+		dom.galleries.each(function( index ) {
+			var gallery = $(this);
+			var left = gallery.find('.left');
+			var right = gallery.find('.right');
+			var thumbs = gallery.find('.thumbs');
+			var holder = gallery.find('.holder');
+			var pip = gallery.find('.pip');
+			var pips = [];
 
-        	pip.each(function( pipindex ) {
-	        	var pip = $(this);
-	        	pip.click(function(event) {
-		            jump(pipindex,index);
-		        });
-		        if(pipindex == 0) pip.addClass('active');
-	        	pips.push(pip);
-	        });
+			pip.each(function( pipindex ) {
+				var pip = $(this);
+				pip.click(function() {
+					jump(pipindex,index);
+				});
+				if(pipindex == 0) pip.addClass('active');
+				pips.push(pip);
+			});
 
-        	data.push({'left':left,'right':right,'thumbs':thumbs,'holder':holder,'pips':pips,'current':0});
+			data.push({'left':left,'right':right,'thumbs':thumbs,'holder':holder,'pips':pips,'current':0});
 
-        	left.click(function(event) {
-	            if($(this).hasClass( "active" )) next("left",index);
-	        });
-	        right.click(function(event) {
-	            if($(this).hasClass( "active" )) next("right",index);
-	        });
+			left.click(function() {
+				if($(this).hasClass( "active" )) next("left",index);
+			});
+			right.click(function() {
+				if($(this).hasClass( "active" )) next("right",index);
+			});
 
 		});
 
 		window.addEventListener("resize", resize);
 
-		trace.log('getBreakPoint'+utils.getBreakPoint());
-
 
 	}
 
-	/* count images loaded, when ready animate */
-	function imgLoaded(id) {
-		trace.log('imgLoaded id = '+id);
-		loadCount++;
-		if(loadCount >= imgLoad.length) {
-			$('#background').addClass('active');	
-			$('#background-light').addClass('active');	
-		}
-	}
 
 	/* start galleries over on browser resize */
 	function resize() {
@@ -97,12 +83,10 @@
 
 		var width = data[gallery].holder.width();
 		var thumbsWidth = data[gallery].thumbs.width();
-		var left = parseInt(data[gallery].thumbs.css("margin-left"));
+		//var left = parseInt(data[gallery].thumbs.css("margin-left"));
 		var maxLeft = width - thumbsWidth;
 
 		var distance = id * width * -1;
-
-		console.log('distance = '+distance);
 
 		if(distance >= 0) {
 			distance = 0;
@@ -128,11 +112,6 @@
 
 
 	}
-
-	function set(direction) {
-
-	}
-
 
 	// Public API definitions
 	site.home = {

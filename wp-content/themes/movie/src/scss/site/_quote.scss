@@ -58,18 +58,18 @@
     	.txt {
     		color:#fff;
     		
-    		text-shadow: rem(5,$text-bp-sm) rem(5,$text-bp-sm) rem(20,$text-bp-sm) black; 
+    		text-shadow: rem(5,$text-bp-sm) rem(5,$text-bp-sm) rem(10,$text-bp-sm) black; 
     		font-size: rem(21,$text-bp-sm);
         	line-height: rem(24,$text-bp-sm);
 
         	@include bp-medium {
-        		text-shadow: rem(5,$text-bp-md) rem(5,$text-bp-md) rem(20,$text-bp-md) black; 
+        		text-shadow: rem(5,$text-bp-md) rem(5,$text-bp-md) rem(10,$text-bp-md) black; 
 		        font-size: rem(50,$text-bp-md);
         		line-height: rem(55,$text-bp-md);
 		    }
 
 		    @include bp-large {
-		    	text-shadow: rem(5,$text-bp-lg) rem(5,$text-bp-lg) rem(20,$text-bp-lg) black; 
+		    	text-shadow: rem(5,$text-bp-lg) rem(5,$text-bp-lg) rem(10,$text-bp-lg) black; 
 		        font-size: rem(44,$text-bp-lg);
         		line-height: rem(48,$text-bp-lg);
 		    }
@@ -90,20 +90,20 @@
     	}
     	.author {
     		color:$color-red;
-    		text-shadow: rem(5,$text-bp-sm) rem(5,$text-bp-sm) rem(20,$text-bp-sm) black; 
+    		text-shadow: rem(5,$text-bp-sm) rem(5,$text-bp-sm) rem(10,$text-bp-sm) black; 
     		margin-top: rem(24,$text-bp-lg);
     		font-size: rem(18,$text-bp-sm);
         	line-height: rem(21,$text-bp-sm);
 
         	@include bp-medium {
-        		text-shadow: rem(5,$text-bp-md) rem(5,$text-bp-md) rem(20,$text-bp-md) black; 
+        		text-shadow: rem(5,$text-bp-md) rem(5,$text-bp-md) rem(10,$text-bp-md) black; 
         		margin-top: rem(24,$text-bp-md);
 		        font-size: rem(36,$text-bp-md);
         		line-height: rem(55,$text-bp-md);
 		    }
 
 		    @include bp-large {
-		    	text-shadow: rem(5,$text-bp-lg) rem(5,$text-bp-lg) rem(20,$text-bp-lg) black; 
+		    	text-shadow: rem(5,$text-bp-lg) rem(5,$text-bp-lg) rem(10,$text-bp-lg) black; 
 		    	margin-top: rem(24,$text-bp-lg);
 		        font-size: rem(24,$text-bp-lg);
         		line-height: rem(30,$text-bp-lg);

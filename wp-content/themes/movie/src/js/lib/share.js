@@ -2,20 +2,13 @@
 	"use strict";
 
 	var id = "share",
-    trace = site.utilities.trace,
-    hashtag = "LaughingHouse";
+    trace = trace = {push: function() {}},
+    hashtag = "BookOfFaces";
 
 	function init() {
-
-        render();    
+        trace = site.utilities && site.utilities.trace ? site.utilities.trace : {push: function() {}};
     }
 
-    function render() {
-
-    	
-        
-
-    }
 
     function url(options) {
 

@@ -1,12 +1,11 @@
-;(function(site, undefined){
+(function(site){
 	"use strict";
 
 	var id = "scrolling",
 	trace = site.utilities.trace,
     utils = site.utils,
     dom = {},
-    data = [],
-    breakPoint = "";
+    data = [];
 
 	function init() {
 
@@ -16,7 +15,7 @@
         trace.log('dom.navBtn = '+dom.navBtn);
 
 
-        dom.scrollUp.click(function(event) {
+        dom.scrollUp.click(function() {
             scrollToTop();
         });
 
@@ -28,7 +27,7 @@
 
         // look for all a background scrolling elements and set up pips and arrows //
 
-        dom.scrolling.each(function( index ) {
+        dom.scrolling.each(function( ) {
             var elem = $(this);
             data.push({'obj':elem});
         }); 
@@ -75,18 +74,7 @@
 
     }
 
-    /* openMenu opens the mobile nav */
-    function openMenu() {
-        trace.push('openMenu');
-        menuOpen = true;
-        dom.navBtns.addClass('active');
-    }
-    /* closeMenu closes the mobile nav */
-    function closeMenu() {
-        trace.push('closeMenu');
-        menuOpen = false;
-        dom.navBtns.removeClass('active');
-    }
+   
 
 	site.nav = {
 	};

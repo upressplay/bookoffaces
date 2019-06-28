@@ -1,21 +1,20 @@
-;(function(site, undefined){
+(function(site){
 	"use strict";
 
 	var id = "overlay",
-	data = [],
 	dom = {},
-	trace = site.utilities.trace,
-	utils = site.utils,
+	trace = {push: function() {}},
 	current = 0,
 	next = 0,
 	currentContent = {},
 	videos = {},
 	photos = {},
 	articles = {},
-	bios = {},
-	overlayOpen = false;
+	bios = {};
 
 	function init() {
+
+		trace = site.utilities && site.utilities.trace ? site.utilities.trace : {push: function() {}};
 
 		videos = {'id':'videos','content':[]};
 		photos = {'id':'photos', 'content':[]};
@@ -29,7 +28,7 @@
 			
 			var btn = $(this);
 			btn.attr('data-id',index);
-			btn.click(function(event) {
+			btn.click(function() {
 				event.preventDefault();
                 openOverlay(index,videos);
             });
@@ -43,7 +42,7 @@
 
 			var btn = $(this);
 			btn.attr('data-id',index);
-			btn.click(function(event) {
+			btn.click(function() {
 				event.preventDefault();
                 openOverlay(index,photos);
             });
@@ -55,7 +54,7 @@
 
 			var btn = $(this);
 			btn.attr('data-id',index);
-			btn.click(function(event) {
+			btn.click(function() {
 				event.preventDefault();
                 openOverlay(index,articles);
             });
@@ -67,7 +66,7 @@
 
 			var btn = $(this);
 			btn.attr('data-id',index);
-			btn.click(function(event) {
+			btn.click(function() {
 				event.preventDefault();
                 openOverlay(index,bios);
             });
@@ -76,7 +75,7 @@
 
 		dom.overlay = $('.overlay');
 		dom.closeBtn = dom.overlay.find('.close-btn');
-		dom.closeBtn.click(function(event) {
+		dom.closeBtn.click(function() {
             closeOverlay();
         });
 
@@ -86,17 +85,17 @@
         dom.left = dom.overlay.find('.left');
         dom.right = dom.overlay.find('.right');
 
-        dom.left.click(function(event) {
+        dom.left.click(function() {
             nextContent('left');
         });
-        dom.right.click(function(event) {
+        dom.right.click(function() {
             nextContent('right');
         });
 
-		dom.overlay.on('swipeleft', function(e){
+		dom.overlay.on('swipeleft', function(){
 			trace.log('left');
 			nextContent('left');
-		}).on('swiperight', function(e){
+		}).on('swiperight', function(){
 			trace.log('right');
 			nextContent('right');
 		});
@@ -128,7 +127,6 @@
 
 	function openOverlay(id,type) {
 		trace.log('openOverlay id '+id);
-		overlayOpen = true;
 
 		currentContent = type;
 		
@@ -139,7 +137,6 @@
 	/* closes the Overlay from the close btn */
 
 	function closeOverlay() {
-		overlayOpen = false;
 		trace.log('closeOverlay');
 		dom.overlay.removeClass('active');
 		dom.container.html('');
@@ -154,7 +151,7 @@
 
 		var hires = entry.attr('data-hires');
 		var vidid = entry.attr('data-vidid');
-		var vidfile = entry.attr('data-vidfile');
+		//var vidfile = entry.attr('data-vidfile');
 		var vidtype = entry.attr('data-vidtype');
 		var width = parseInt(entry.attr('data-hires-w'));
 		var height = parseInt(entry.attr('data-hires-h'));
@@ -162,9 +159,11 @@
 		var title = entry.find('.title').html();
 		var date = entry.find('.date').html();
 		var sub = entry.find('.sub').html();
+		var url = entry.attr('href');
+		var excerpt = entry.find('.excerpt').text();
 
 		trace.log("width = "+width+" height = "+height);
-		trace.log("date = "+date+" sub = "+sub);
+		trace.log("url = "+url+" excerpt = "+excerpt);
 
 		if(height >= width) {
 			dom.container.addClass('tall');
@@ -202,12 +201,39 @@
 			dom.holder.addClass('articles');
 			dom.container.addClass('articles');
 			var article = '<div class="featured-img"><img src="'+hires+'"/></div><!-- featured-img -->';
-					article +='<div class="title">'+title+'</div>';
-				if(sub != undefined) article +='<div class="sub">'+sub+'</div>';
-				if(date != undefined) article +='<div class="sub">'+date+'</div>';
-					article +='<div class="content">'+content+'</div>';
+			article +='<div class="title">'+title+'</div>';
+			if(sub != undefined) {
+				article +='<div class="sub">'+sub+'</div>';
+			}
+			if(date != undefined) {
+				article +='<div class="sub">'+date+'</div>';
+			}
+			article +='<div class="share-btns">';
+			article +='<div class="share" data-type="facebook" data-title="'+title+'" data-url="'+url+'" data-desc="'+excerpt+'"><span class="fab fa-facebook-square" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span> </div>';
+			article +='<div class="share" data-type="twitter" data-title="'+title+'" data-url="'+url+'" data-desc="'+excerpt+'"><span class="fab fa-twitter-square" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span> </div>';
+			article +='</div>';
+
+			article +='<div class="content">'+content+'</div>';
 
 			dom.container.append(article);
+
+			dom.share = $( ".share" );
+			dom.share.each(function( index ) {
+				
+				var btn = $(this);
+				var options = {};
+				options.title = btn.attr('data-title');
+				options.url = btn.attr('data-url');
+				options.desc = btn.attr('data-desc');
+				options.type = btn.attr('data-type');
+
+				btn.click(function() {
+					site.share.url(options);
+	            });
+
+				videos.content.push(btn);
+
+			});
 
 		} else {
 			dom.container.removeClass('articles');	

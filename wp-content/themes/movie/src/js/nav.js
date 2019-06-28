@@ -1,18 +1,13 @@
-;(function(site, undefined){
+(function(site){
 	"use strict";
 
-	var id = "nav",
-	color = "dark",
-	trace = site.utilities.trace,
-    utils = site.utils,
-    menuOpen = false,
-    dom = {},
-    navCollapsed = false,
-    breakPoint = "";
+	var trace = {push: function() {}},
+    dom = {};
 
 	function init() {
 
-        trace.log(id+" render utils.getBreakPoint = "+utils.getBreakPoint());
+        trace = site.utilities && site.utilities.trace ? site.utilities.trace : {push: function() {}};
+
         dom.site = $("#site");
         dom.header = $("header");
         dom.scrollUp = $("#scroll-up");
@@ -20,14 +15,12 @@
         dom.menuCloseBtn = $("#menu-close-btn");
         dom.navBtns = $("#nav-btns"); 
         dom.navBtn = $(".nav-btn"); 
-        trace.log('dom.navBtn = '+dom.navBtn);
 
-
-        dom.menuBtn.click(function(event) {
+        dom.menuBtn.click(function() {
             openMenu();
         });
 
-        dom.menuCloseBtn.click(function(event) {
+        dom.menuCloseBtn.click(function() {
             closeMenu();
         });
   
@@ -36,13 +29,11 @@
     /* openMenu opens the mobile nav */
     function openMenu() {
         trace.push('openMenu');
-        menuOpen = true;
         dom.navBtns.addClass('active');
     }
     /* closeMenu closes the mobile nav */
     function closeMenu() {
         trace.push('closeMenu');
-        menuOpen = false;
         dom.navBtns.removeClass('active');
     }
 

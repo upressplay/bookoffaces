@@ -183,6 +183,28 @@
                     margin-bottom: rem(20,$text-bp-lg);
                 }   
             }
+            .share-btns {
+                display: flex;
+                flex-direction:row;
+                flex-wrap:nowrap;
+                .share {
+                    font-size:rem(33,$text-bp-sm);
+                    line-height:rem(40,$text-bp-sm);
+                    margin-right: rem(10,$text-bp-sm);
+                     
+                    @include bp-medium {
+                        font-size:rem(28,$text-bp-md);
+                        line-height:rem(32,$text-bp-md);
+                        margin-right: rem(10,$text-bp-md);
+                    }
+
+                    @include bp-large {
+                        font-size:rem(36,$text-bp-lg);
+                        line-height:rem(40,$text-bp-lg);
+                        margin-right: rem(10,$text-bp-lg);
+                    } 
+                }     
+            }
             .content {
                  
             }    
