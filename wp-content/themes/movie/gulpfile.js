@@ -1,7 +1,7 @@
 "use strict";
 
 const gulp = require('gulp');
-
+const debug = require('gulp-debug');
 /*===================================================
 Begin gulp plugins
 ===================================================*/
@@ -126,14 +126,17 @@ function jsMinify() {
 }
 
 function scss(){
+	del(["src/css/generated"]);
 	return gulp
 	.src('src/scss/**/*.scss')
+	.pipe(debug())
 	.pipe(plumber({errorHandler: onError})) //if the SASS parser crashes, fail gracefully
 	.pipe(sass()) // Using gulp-sass
 	.pipe(gulp.dest('src/css/generated'));
 }
 
 function css(){
+	del(["css"]);
 	return gulp
 	.src('src/css/**/*.css')
 	.pipe(sourcemaps.init()) //initialize creating the sourcemap
@@ -196,8 +199,6 @@ function copyPages() { //copy all html and php files over
 function watchFiles(){ //watch for changes to HTML, CSS, SASS and javascript files and automatically process them
 	gulp.watch(['src/scss/**/*.scss','src/css/**/*.css', '!src/css/generated/**/*'], gulp.series(styles));
 	gulp.watch(['src/js/**/*.js'], gulp.series(scripts));
-	gulp.watch(['src/**/*.html'], gulp.series(pages));
-	gulp.watch(['src/**/*.json'], gulp.series(data));
 }
 
 const pages = gulp.series(

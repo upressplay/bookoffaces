@@ -318,7 +318,7 @@ nav {
   vertical-align: middle;
   color: #fbf1e3;
   font-size: 5rem;
-  padding: 2.5rem 2.5rem; }
+  padding: 2.5rem 2rem; }
   @media only screen and (min-width: 751px) {
     .social-btn {
       font-size: 2.7rem;
@@ -481,7 +481,7 @@ header {
   font-size: 7.2rem; }
   @media only screen and (min-width: 751px) {
     .txt-btn {
-      font-size: 3.6rem; } }
+      font-size: 8rem; } }
   @media only screen and (min-width: 1271px) {
     .txt-btn {
       font-size: 8rem; } }
@@ -510,7 +510,7 @@ header {
   margin: 20rem 0 0 24rem; }
   @media only screen and (min-width: 751px) {
     #trailer-btn {
-      margin: 15rem 0 5rem 60rem; } }
+      margin: 30rem 0 5rem 50rem; } }
   @media only screen and (min-width: 1271px) {
     #trailer-btn {
       margin: 35rem 0 5rem 66rem; } }
@@ -522,7 +522,7 @@ header {
   background-repeat: no-repeat;
   background-position: top left;
   width: 75rem;
-  height: 66rem; }
+  height: 45rem; }
   @media only screen and (min-width: 751px) {
     #trailer {
       width: 127rem;
@@ -571,7 +571,7 @@ header {
   font-family: "oldnewspapertypesregular", serif;
   color: #fff;
   font-size: 4.8rem;
-  margin: 5rem 0 10rem 10rem; }
+  margin: 5rem 0 5rem 10rem; }
   @media only screen and (min-width: 751px) {
     .section-title {
       font-size: 3.6rem;
@@ -590,20 +590,23 @@ header {
 
 .page-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  clear: left;
   flex-direction: row;
   flex-wrap: nowrap;
+  font-family: "oldnewspapertypesregular", serif;
   text-align: center;
   font-size: 7.5rem;
   margin: 3rem; }
   @media only screen and (min-width: 751px) {
     .page-nav {
-      font-size: 3.6rem;
+      font-size: 2.4rem;
       margin: 2rem; } }
   @media only screen and (min-width: 1271px) {
     .page-nav {
-      font-size: 4rem;
-      margin: 2rem; } }
+      font-size: 2.4rem;
+      margin: 2rem 10rem; } }
   .page-nav a {
     margin: 3rem; }
     @media only screen and (min-width: 751px) {
@@ -647,18 +650,18 @@ header {
   background-position: 0% 0%;
   background-size: 100% auto;
   width: 100%;
-  height: 25rem; }
+  height: 35rem; }
   @media only screen and (min-width: 751px) {
     .quote {
-      height: 75rem; } }
+      height: 70rem; } }
   @media only screen and (min-width: 1271px) {
     .quote {
       height: 75rem; } }
   .quote .holder {
     font-family: "oldnewspapertypesregular", serif;
     text-align: center;
-    width: 33rem;
-    margin-top: 5rem; }
+    width: 31rem;
+    margin-top: 8rem; }
     @media only screen and (min-width: 751px) {
       .quote .holder {
         width: 50rem;
@@ -668,10 +671,10 @@ header {
         width: 60rem;
         margin-top: 13rem; } }
     .quote .holder.left {
-      margin-left: 6rem; }
+      margin-left: 8rem; }
       @media only screen and (min-width: 751px) {
         .quote .holder.left {
-          margin-left: 23rem; } }
+          margin-left: 18rem; } }
       @media only screen and (min-width: 1271px) {
         .quote .holder.left {
           margin-left: 20rem; } }
@@ -679,7 +682,7 @@ header {
       margin-left: 36rem; }
       @media only screen and (min-width: 751px) {
         .quote .holder.right {
-          margin-left: 28rem; } }
+          margin-left: 65rem; } }
       @media only screen and (min-width: 1271px) {
         .quote .holder.right {
           margin-left: 90rem; } }
@@ -691,8 +694,8 @@ header {
       @media only screen and (min-width: 751px) {
         .quote .holder .txt {
           text-shadow: 0.5rem 0.5rem 1rem black;
-          font-size: 5rem;
-          line-height: 5.5rem; } }
+          font-size: 4rem;
+          line-height: 4.8rem; } }
       @media only screen and (min-width: 1271px) {
         .quote .holder .txt {
           text-shadow: 0.5rem 0.5rem 1rem black;
@@ -703,8 +706,8 @@ header {
         line-height: 2.1rem; }
         @media only screen and (min-width: 751px) {
           .quote .holder .txt.long {
-            font-size: 5rem;
-            line-height: 5.5rem; } }
+            font-size: 3.6rem;
+            line-height: 4rem; } }
         @media only screen and (min-width: 1271px) {
           .quote .holder .txt.long {
             font-size: 3.3rem;
@@ -733,82 +736,112 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start; }
-  #synopsis .holder {
+  align-items: flex-start;
+  width: 75rem; }
+  @media only screen and (min-width: 751px) {
+    #synopsis {
+      width: 127rem; } }
+  @media only screen and (min-width: 1271px) {
+    #synopsis {
+      width: 160rem; } }
+  #synopsis > .holder {
     font-family: "oldnewspapertypesregular", serif;
     background-color: rgba(154, 0, 0, 0.5);
-    width: 45rem;
+    width: 50rem;
     padding: 2rem;
     margin: 5rem;
     font-size: 2.8rem;
     line-height: 3.6rem; }
     @media only screen and (min-width: 751px) {
-      #synopsis .holder {
+      #synopsis > .holder {
         width: 65rem;
         padding: 2rem;
         margin: 10rem;
         font-size: 2.8rem;
         line-height: 3.6rem; } }
     @media only screen and (min-width: 1271px) {
-      #synopsis .holder {
-        width: 55rem;
+      #synopsis > .holder {
+        width: 77rem;
         padding: 2rem;
         margin: 10rem;
         font-size: 2.8rem;
         line-height: 3.6rem; } }
+    #synopsis > .holder img {
+      width: 22rem;
+      float: left;
+      margin: 0 2rem 2rem 0; }
+    #synopsis > .holder p {
+      margin: 0; }
 
-.single {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start; }
-  .single .featured-img {
-    width: 70rem;
-    margin: 0 2.5rem 4rem 2.5rem; }
-    @media only screen and (min-width: 751px) {
-      .single .featured-img {
-        width: 80rem;
-        margin: 0 4rem 4rem 0; } }
-    @media only screen and (min-width: 1271px) {
-      .single .featured-img {
-        width: 80rem;
-        margin: 0 4rem 4rem 4rem; } }
-  .single .info {
-    width: 70rem;
-    margin: 0 2.5rem 4rem 2.5rem; }
-    @media only screen and (min-width: 751px) {
-      .single .info {
-        width: 80rem;
-        margin: 0 4rem 4rem 0; } }
-    @media only screen and (min-width: 1271px) {
-      .single .info {
-        width: 80rem;
-        margin: 0 4rem 4rem 4rem; } }
-    .single .info .title {
-      font-family: "oldnewspapertypesregular", serif;
-      color: #fff;
-      font-size: 3.3rem;
-      line-height: 4rem;
-      margin-bottom: 1.5rem; }
-      @media only screen and (min-width: 751px) {
-        .single .info .title {
-          font-size: 2.8rem;
-          line-height: 3.2rem;
-          margin-bottom: 1.5rem; } }
-      @media only screen and (min-width: 1271px) {
-        .single .info .title {
-          font-size: 3.6rem;
-          line-height: 4rem;
-          margin-bottom: 1rem; } }
-    .single .info .sub {
-      font-family: "oldnewspapertypesregular", serif;
-      margin-bottom: 1.5rem; }
-      @media only screen and (min-width: 751px) {
-        .single .info .sub {
-          margin-bottom: 1.5rem; } }
-      @media only screen and (min-width: 1271px) {
-        .single .info .sub {
-          margin-bottom: 1.4rem; } }
+@media only screen and (min-width: 1271px) {
+  .single-post-content {
+    padding: 4rem 10rem 4rem 10rem; } }
+
+.single-post-content img {
+  float: left; }
+
+.single-post-content .featured-img,
+.single-post-content img {
+  float: left;
+  width: 70rem;
+  height: initial;
+  margin: 0 2.5rem 4rem 0; }
+  @media only screen and (min-width: 751px) {
+    .single-post-content .featured-img,
+    .single-post-content img {
+      width: 80rem;
+      margin: 0 4rem 4rem 0; } }
+  @media only screen and (min-width: 1271px) {
+    .single-post-content .featured-img,
+    .single-post-content img {
+      width: 80rem;
+      margin: 0 4rem 4rem 0; } }
+
+.single-post-content .title {
+  font-family: "oldnewspapertypesregular", serif;
+  color: #fff;
+  font-size: 3.3rem;
+  line-height: 4rem;
+  margin-bottom: 2rem; }
+  @media only screen and (min-width: 751px) {
+    .single-post-content .title {
+      font-size: 4.4rem;
+      line-height: 4.8rem;
+      margin-bottom: 2rem; } }
+  @media only screen and (min-width: 1271px) {
+    .single-post-content .title {
+      font-size: 4.4rem;
+      line-height: 4.8rem;
+      margin-bottom: 2rem; } }
+
+.single-post-content .sub,
+.single-post-content .date {
+  font-family: "oldnewspapertypesregular", serif;
+  margin-bottom: 1.5rem; }
+  @media only screen and (min-width: 751px) {
+    .single-post-content .sub,
+    .single-post-content .date {
+      margin-bottom: 1.5rem; } }
+  @media only screen and (min-width: 1271px) {
+    .single-post-content .sub,
+    .single-post-content .date {
+      margin-bottom: 1.4rem; } }
+
+.single-post-content .content {
+  color: #fff;
+  font-size: 2.1rem;
+  line-height: 2.4rem;
+  margin-bottom: 2rem; }
+  @media only screen and (min-width: 751px) {
+    .single-post-content .content {
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      margin-bottom: 2rem; } }
+  @media only screen and (min-width: 1271px) {
+    .single-post-content .content {
+      font-size: 2.1rem;
+      line-height: 3rem;
+      margin-bottom: 2rem; } }
 
 .gallery {
   text-align: center;
@@ -828,13 +861,13 @@ header {
     overflow: visible; }
     .gallery .container .holder {
       width: 75rem;
-      margin: 7rem 4.5rem;
+      margin: 4rem 8rem;
       height: auto; }
       @media only screen and (min-width: 751px) {
         .gallery .container .holder {
           overflow: hidden;
           flex-wrap: nowrap;
-          width: 80rem;
+          width: 96rem;
           margin: 0; } }
       @media only screen and (min-width: 1271px) {
         .gallery .container .holder {
@@ -843,40 +876,53 @@ header {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
         transition: margin 1s ease-in-out;
         width: fit-content; }
         @media only screen and (min-width: 751px) {
           .gallery .container .holder .thumbs {
+            justify-content: flex-start;
             flex-wrap: nowrap; } }
 
 .gallery-arrow {
+  margin: 9rem; }
+  @media only screen and (min-width: 751px) {
+    .gallery-arrow {
+      margin: 9rem 4.5rem; } }
+  @media only screen and (min-width: 1271px) {
+    .gallery-arrow {
+      margin: 9rem 4.5rem; } }
+
+.gallery-arrow,
+.page-arrow {
   cursor: initial;
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 100% auto;
   opacity: 0.2;
   display: none;
-  margin: 9rem;
   font-size: 5rem;
   transition: all 0.25s ease-in-out; }
   @media only screen and (min-width: 751px) {
-    .gallery-arrow {
+    .gallery-arrow,
+    .page-arrow {
       display: block;
-      margin: 9rem 4.5rem;
       font-size: 2.8rem; } }
   @media only screen and (min-width: 1271px) {
-    .gallery-arrow {
+    .gallery-arrow,
+    .page-arrow {
       width: 5rem;
       height: 5rem;
-      margin: 9rem 4.5rem;
       font-size: 3.6rem; } }
-  .gallery-arrow.active {
+  .gallery-arrow.active,
+  .page-arrow.active {
     cursor: pointer;
     opacity: 1; }
-  .gallery-arrow.left {
+  .gallery-arrow.left,
+  .page-arrow.left {
     background-image: url(../img/arrow_left.png); }
-  .gallery-arrow.right {
+  .gallery-arrow.right,
+  .page-arrow.right {
     background-image: url(../img/arrow_right.png); }
 
 @media only screen and (min-width: 1271px) {
@@ -893,26 +939,24 @@ header {
   flex-wrap: wrap;
   cursor: pointer;
   text-align: center;
-  width: 30rem;
+  width: 27rem;
   margin: 0 1.2rem 4rem 1.2rem; }
   @media only screen and (min-width: 751px) {
     .gallery-thumb {
-      width: 32rem;
+      width: 40rem;
       margin: 0 4rem 4rem 4rem; } }
   @media only screen and (min-width: 1271px) {
     .gallery-thumb {
       width: 40rem;
       margin: 0 5rem 5rem 5rem; } }
   .gallery-thumb .thumb-img {
-    width: 30rem;
+    width: inherit;
     margin: 0 0 3rem 0; }
     @media only screen and (min-width: 751px) {
       .gallery-thumb .thumb-img {
-        width: 32rem;
         margin: 0 0 3.2rem 0; } }
     @media only screen and (min-width: 1271px) {
       .gallery-thumb .thumb-img {
-        width: 40rem;
         margin: 0 0 4rem 0; } }
   .gallery-thumb .info {
     display: flex;
@@ -923,8 +967,8 @@ header {
       display: inline;
       font-family: "oldnewspapertypesregular", serif;
       color: #fff;
-      font-size: 3.3rem;
-      line-height: 4rem;
+      font-size: 2.4rem;
+      line-height: 3rem;
       margin-bottom: 1.5rem; }
       @media only screen and (min-width: 751px) {
         .gallery-thumb .info > .title {
@@ -936,14 +980,37 @@ header {
           font-size: 2.5rem;
           line-height: 3rem;
           margin-bottom: 1rem; } }
-    .gallery-thumb .info > .date {
+    .gallery-thumb .info > .date,
+    .gallery-thumb .info > .sub {
       font-family: "oldnewspapertypesregular", serif;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
       margin-bottom: 1.5rem; }
       @media only screen and (min-width: 751px) {
-        .gallery-thumb .info > .date {
+        .gallery-thumb .info > .date,
+        .gallery-thumb .info > .sub {
+          font-size: 2.1rem;
+          line-height: 2.4rem;
           margin-bottom: 1.5rem; } }
       @media only screen and (min-width: 1271px) {
-        .gallery-thumb .info > .date {
+        .gallery-thumb .info > .date,
+        .gallery-thumb .info > .sub {
+          font-size: 2.1rem;
+          line-height: 2.4rem;
+          margin-bottom: 1.4rem; } }
+    .gallery-thumb .info > .excerpt {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      margin-bottom: 1.5rem; }
+      @media only screen and (min-width: 751px) {
+        .gallery-thumb .info > .excerpt {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          margin-bottom: 1.5rem; } }
+      @media only screen and (min-width: 1271px) {
+        .gallery-thumb .info > .excerpt {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
           margin-bottom: 1.4rem; } }
   .gallery-thumb .content {
     display: none; }
@@ -953,14 +1020,14 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 5rem; }
+  margin: 2.5rem; }
   @media only screen and (min-width: 751px) {
     .pips {
       display: flex;
-      margin: 5rem; } }
+      margin: 2.5rem; } }
   @media only screen and (min-width: 1271px) {
     .pips {
-      margin: 5rem; } }
+      margin: 2.5rem; } }
   .pips .pip {
     cursor: pointer;
     background-color: #fff;
@@ -1000,7 +1067,7 @@ header {
     .overlay .holder .container {
       display: block; }
       .overlay .holder .container.videos {
-        height: 42.2rem; }
+        height: 75rem; }
         @media only screen and (min-width: 751px) {
           .overlay .holder .container.videos {
             width: 100rem;
@@ -1018,8 +1085,8 @@ header {
           .overlay .holder .container.photos {
             width: 100rem; } }
       .overlay .holder .container.articles {
-        width: 70rem;
-        height: 90vh;
+        width: 75rem;
+        height: 95vh;
         overflow-x: hidden;
         overflow-y: auto; }
         @media only screen and (min-width: 751px) {
@@ -1035,8 +1102,8 @@ header {
           margin: 0 2.5rem 4rem 2.5rem; }
           @media only screen and (min-width: 751px) {
             .overlay .holder .container.articles .featured-img {
-              width: 80rem;
-              margin: 0 4rem 4rem 0; } }
+              width: 50rem;
+              margin: 0 5rem 5rem 0; } }
           @media only screen and (min-width: 1271px) {
             .overlay .holder .container.articles .featured-img {
               width: 60rem;
@@ -1053,7 +1120,7 @@ header {
               width: 40rem;
               margin: 4rem 0 4rem 0; } }
       .overlay .holder .container.bios {
-        height: 42.2rem; }
+        width: 75rem; }
         @media only screen and (min-width: 751px) {
           .overlay .holder .container.bios {
             width: 100rem; } }
@@ -1089,61 +1156,56 @@ header {
         width: 100%;
         font-size: 3.3rem;
         line-height: 4rem;
-        margin-bottom: 1.5rem; }
+        margin: 0 3rem 2rem 3rem; }
         @media only screen and (min-width: 751px) {
           .overlay .holder .container .title {
             font-size: 2.8rem;
             line-height: 3.2rem;
-            margin-bottom: 1.5rem; } }
+            margin: 0 0 2rem 0; } }
         @media only screen and (min-width: 1271px) {
           .overlay .holder .container .title {
             font-size: 3.6rem;
             line-height: 4rem;
-            margin-bottom: 2rem; } }
-      .overlay .holder .container .sub {
+            margin: 0 0 2rem 0; } }
+      .overlay .holder .container .sub,
+      .overlay .holder .container .content {
         font-family: "oldnewspapertypesregular", serif;
-        width: 100%;
-        margin-bottom: 1.5rem; }
+        margin: 0 3rem 1.5rem 3rem; }
         @media only screen and (min-width: 751px) {
-          .overlay .holder .container .sub {
-            margin-bottom: 1.5rem; } }
+          .overlay .holder .container .sub,
+          .overlay .holder .container .content {
+            margin: 0 0 1.5rem 0; } }
         @media only screen and (min-width: 1271px) {
-          .overlay .holder .container .sub {
-            margin-bottom: 2rem; } }
-      .overlay .holder .container .share-btns {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap; }
-        .overlay .holder .container .share-btns .share {
-          font-size: 3.3rem;
-          line-height: 4rem;
-          margin-right: 1rem; }
-          @media only screen and (min-width: 751px) {
-            .overlay .holder .container .share-btns .share {
-              font-size: 2.8rem;
-              line-height: 3.2rem;
-              margin-right: 1rem; } }
-          @media only screen and (min-width: 1271px) {
-            .overlay .holder .container .share-btns .share {
-              font-size: 3.6rem;
-              line-height: 4rem;
-              margin-right: 1rem; } }
-  .overlay .close-btn {
-    cursor: pointer;
+          .overlay .holder .container .sub,
+          .overlay .holder .container .content {
+            margin: 0 0 2rem 0; } }
+  .overlay .overlay-nav {
     position: absolute;
-    font-size: 3.6rem;
-    top: 5rem;
-    right: 5rem; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0rem;
+    right: 0rem;
+    padding: 2rem; }
     @media only screen and (min-width: 751px) {
-      .overlay .close-btn {
-        font-size: 3.6rem;
-        top: 5rem;
-        right: 5rem; } }
+      .overlay .overlay-nav {
+        padding: 2rem; } }
     @media only screen and (min-width: 1271px) {
-      .overlay .close-btn {
-        font-size: 3.6rem;
-        top: 5rem;
-        right: 5rem; } }
+      .overlay .overlay-nav {
+        padding: 2rem; } }
+    .overlay .overlay-nav .close-btn {
+      cursor: pointer;
+      font-size: 3.6rem;
+      margin-bottom: 2.5rem; }
+      @media only screen and (min-width: 751px) {
+        .overlay .overlay-nav .close-btn {
+          font-size: 3.6rem;
+          margin-bottom: 2.5rem; } }
+      @media only screen and (min-width: 1271px) {
+        .overlay .overlay-nav .close-btn {
+          font-size: 3.6rem;
+          margin-bottom: 2.5rem; } }
 
 .overlay-arrow {
   cursor: initial;
@@ -1176,6 +1238,37 @@ header {
 
 .overlay-arrow:hover.active {
   color: #eac80b; }
+
+.share-btns {
+  display: flex;
+  margin-bottom: 0rem; }
+  @media only screen and (min-width: 751px) {
+    .share-btns {
+      margin-bottom: 0rem; } }
+  @media only screen and (min-width: 1271px) {
+    .share-btns {
+      margin-bottom: 0rem; } }
+  .share-btns.column {
+    flex-direction: column;
+    justify-content: center; }
+  .share-btns.row {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap; }
+  .share-btns .share {
+    font-size: 3.3rem;
+    line-height: 4rem;
+    margin-right: 1rem; }
+    @media only screen and (min-width: 751px) {
+      .share-btns .share {
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        margin-right: 1rem; } }
+    @media only screen and (min-width: 1271px) {
+      .share-btns .share {
+        font-size: 3.6rem;
+        line-height: 4rem;
+        margin-right: 1rem; } }
 
 #footer {
   display: flex;

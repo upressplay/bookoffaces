@@ -5,10 +5,20 @@
     justify-content:center; 
     align-items:flex-start;
 
-    .holder {
+    width:rem(750,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(1270,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(1600,$text-bp-lg);
+    }
+    >.holder {
         font-family: $headline-font;
         background-color: rgba(154,0,0,0.5);
-        width:rem(450,$text-bp-sm);
+
+        width:rem(500,$text-bp-sm);
         padding:rem(20,$text-bp-sm);
         margin:rem(50,$text-bp-sm);
         font-size: rem(28,$text-bp-sm);
@@ -23,11 +33,19 @@
         }
 
         @include bp-large {
-            width:rem(550,$text-bp-lg);
+            width:rem(770,$text-bp-lg);
             padding:rem(20,$text-bp-lg);
             margin:rem(100,$text-bp-lg);
             font-size: rem(28,$text-bp-lg);
             line-height: rem(36,$text-bp-lg);
+        }
+        img {
+            width:rem(220,$text-bp-lg);
+            float: left;
+            margin:0 rem(20,$text-bp-lg) rem(20,$text-bp-lg) 0;
+        }
+        p {
+            margin:0;
         }
     }
 }

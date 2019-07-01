@@ -9,9 +9,7 @@
     opacity: 0;
     display: none;
     transition: all 0.25s ease-in-out; 
-    
 
-    
     &.active {
         display: block;
         opacity: 1;    
@@ -33,7 +31,7 @@
             
             &.videos {
 
-                height: rem(422,$text-bp-sm);
+                height: rem(750,$text-bp-sm);
 
                 @include bp-medium {
                     width: rem(1000,$text-bp-md);
@@ -61,8 +59,8 @@
             }
             &.articles {
 
-                width: rem(700,$text-bp-md);
-                height: 90vh;
+                width: rem(750,$text-bp-md);
+                height: 95vh;
                 overflow-x:hidden;
                 overflow-y:auto;
 
@@ -80,8 +78,8 @@
                     margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) rem(25,$text-bp-sm);
 
                     @include bp-medium {
-                        width: rem(800,$text-bp-md);
-                        margin:0 rem(40,$text-bp-md)  rem(40,$text-bp-md) 0;
+                        width: rem(500,$text-bp-md);
+                        margin:0 rem(50,$text-bp-md) rem(50,$text-bp-md) 0;
                     }
 
                     @include bp-large {
@@ -106,7 +104,7 @@
             }
              &.bios {
 
-                height: rem(422,$text-bp-sm);
+                width: rem(750,$text-bp-sm);
                 
                 @include bp-medium {
                     width: rem(1000,$text-bp-md);
@@ -156,55 +154,34 @@
                 width: 100%;
                 font-size:rem(33,$text-bp-sm);
                 line-height:rem(40,$text-bp-sm);
-                margin-bottom: rem(15,$text-bp-sm);
+                margin: 0 rem(30,$text-bp-sm) rem(20,$text-bp-sm) rem(30,$text-bp-sm);
                  
                 @include bp-medium {
                     font-size:rem(28,$text-bp-md);
                     line-height:rem(32,$text-bp-md);
-                    margin-bottom: rem(15,$text-bp-md);
+                    margin: 0 0 rem(20,$text-bp-md) 0;
                 }
 
                 @include bp-large {
                     font-size:rem(36,$text-bp-lg);
                     line-height:rem(40,$text-bp-lg);
-                    margin-bottom: rem(20,$text-bp-lg);
+                    margin: 0 0 rem(20,$text-bp-lg) 0;
                 }    
             }
-            .sub {
+            .sub,
+            .content {
                 font-family: $headline-font;
-                width: 100%;
-                margin-bottom: rem(15,$text-bp-sm);
+                margin: 0 rem(30,$text-bp-sm) rem(15,$text-bp-sm) rem(30,$text-bp-sm);
                  
                 @include bp-medium {
-                    margin-bottom: rem(15,$text-bp-md);
+                    margin: 0 0 rem(15,$text-bp-md) 0;
                 }
 
                 @include bp-large {
-                    margin-bottom: rem(20,$text-bp-lg);
+                    margin: 0 0 rem(20,$text-bp-lg) 0;
                 }   
             }
-            .share-btns {
-                display: flex;
-                flex-direction:row;
-                flex-wrap:nowrap;
-                .share {
-                    font-size:rem(33,$text-bp-sm);
-                    line-height:rem(40,$text-bp-sm);
-                    margin-right: rem(10,$text-bp-sm);
-                     
-                    @include bp-medium {
-                        font-size:rem(28,$text-bp-md);
-                        line-height:rem(32,$text-bp-md);
-                        margin-right: rem(10,$text-bp-md);
-                    }
-
-                    @include bp-large {
-                        font-size:rem(36,$text-bp-lg);
-                        line-height:rem(40,$text-bp-lg);
-                        margin-right: rem(10,$text-bp-lg);
-                    } 
-                }     
-            }
+            
             .content {
                  
             }    
@@ -212,25 +189,42 @@
         }
 
     }
-    .close-btn {
-        cursor: pointer;
+    .overlay-nav {
         position: absolute;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
 
-        font-size: rem(36,$text-bp-sm);
-        top: rem(50,$text-bp-sm);
-        right: rem(50,$text-bp-sm);
+        background-color: rgba(0,0,0,0.5);
+
+        top: rem(0,$text-bp-sm);
+        right: rem(0,$text-bp-sm);
+        padding: rem(20,$text-bp-sm);
         @include bp-medium {
-            font-size: rem(36,$text-bp-md);
-            top: rem(50,$text-bp-md);
-            right: rem(50,$text-bp-md);
+            padding: rem(20,$text-bp-md);
         }
 
         @include bp-large {
-            font-size: rem(36,$text-bp-lg);
-            top: rem(50,$text-bp-lg);
-            right: rem(50,$text-bp-lg);
-        }  
+            padding: rem(20,$text-bp-lg);
+        }
+        .close-btn {
+            cursor: pointer;
+
+            font-size: rem(36,$text-bp-sm);
+            margin-bottom: rem(25,$text-bp-sm);
+            @include bp-medium {
+                font-size: rem(36,$text-bp-md);
+                margin-bottom: rem(25,$text-bp-md);
+            }
+
+            @include bp-large {
+                font-size: rem(36,$text-bp-lg);
+                margin-bottom: rem(25,$text-bp-lg);
+            }  
+        }
+        
     }
+    
 }
 
 .overlay-arrow {
@@ -275,4 +269,43 @@
 
 }
 
- 
+.share-btns {
+    display: flex;
+
+    margin-bottom: rem(0,$text-bp-sm);
+         
+    @include bp-medium {
+        margin-bottom: rem(0,$text-bp-md);
+    }
+
+    @include bp-large {
+        margin-bottom: rem(0,$text-bp-lg);
+    }
+    
+    &.column {
+        flex-direction:column;
+        justify-content:center;
+    }
+    &.row {
+        flex-direction:row;
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+    }
+    .share {
+        font-size:rem(33,$text-bp-sm);
+        line-height:rem(40,$text-bp-sm);
+        margin-right: rem(10,$text-bp-sm);
+         
+        @include bp-medium {
+            font-size:rem(28,$text-bp-md);
+            line-height:rem(32,$text-bp-md);
+            margin-right: rem(10,$text-bp-md);
+        }
+
+        @include bp-large {
+            font-size:rem(36,$text-bp-lg);
+            line-height:rem(40,$text-bp-lg);
+            margin-right: rem(10,$text-bp-lg);
+        } 
+    }     
+}

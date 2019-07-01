@@ -153,7 +153,7 @@ nav {
     vertical-align: middle;
     color: #fbf1e3;
     font-size: rem(50,$text-bp-sm);
-    padding: rem(25,$text-bp-sm) rem(25,$text-bp-sm);
+    padding: rem(25,$text-bp-sm) rem(20,$text-bp-sm);
 
     @include bp-medium {
         font-size: rem(27,$text-bp-md);

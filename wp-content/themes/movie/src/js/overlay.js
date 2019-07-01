@@ -79,6 +79,8 @@
             closeOverlay();
         });
 
+        dom.overlayNav = $('.overlay-nav');
+
         dom.holder = dom.overlay.find('.holder');
         dom.container = dom.overlay.find('.container');
 
@@ -162,6 +164,17 @@
 		var url = entry.attr('href');
 		var excerpt = entry.find('.excerpt').text();
 
+
+		dom.overlayNav.find('.share-btns').remove();
+
+		var shareBtns ='<div class="share-btns column">';
+			shareBtns +='<div class="share" data-type="facebook" data-title="'+title+'" data-url="'+url+'" data-desc="'+excerpt+'"><span class="fab fa-facebook-square" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span> </div>';
+			shareBtns +='<div class="share" data-type="twitter" data-title="'+title+'" data-url="'+url+'" data-desc="'+excerpt+'"><span class="fab fa-twitter-square" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span> </div>';
+			shareBtns +='</div>';
+		dom.overlayNav.append(shareBtns);
+
+		site.share.set();
+
 		trace.log("width = "+width+" height = "+height);
 		trace.log("url = "+url+" excerpt = "+excerpt);
 
@@ -208,33 +221,12 @@
 			if(date != undefined) {
 				article +='<div class="sub">'+date+'</div>';
 			}
-			article +='<div class="share-btns">';
-			article +='<div class="share" data-type="facebook" data-title="'+title+'" data-url="'+url+'" data-desc="'+excerpt+'"><span class="fab fa-facebook-square" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span> </div>';
-			article +='<div class="share" data-type="twitter" data-title="'+title+'" data-url="'+url+'" data-desc="'+excerpt+'"><span class="fab fa-twitter-square" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span> </div>';
-			article +='</div>';
-
+			
 			article +='<div class="content">'+content+'</div>';
 
 			dom.container.append(article);
 
-			dom.share = $( ".share" );
-			dom.share.each(function( index ) {
-				
-				var btn = $(this);
-				var options = {};
-				options.title = btn.attr('data-title');
-				options.url = btn.attr('data-url');
-				options.desc = btn.attr('data-desc');
-				options.type = btn.attr('data-type');
-
-				btn.click(function() {
-					site.share.url(options);
-	            });
-
-				videos.content.push(btn);
-
-			});
-
+			
 		} else {
 			dom.container.removeClass('articles');	
 		}

@@ -3,13 +3,31 @@
 
 	var id = "share",
     trace = trace = {push: function() {}},
-    hashtag = "BookOfFaces";
+    hashtag = "BookOfFaces",
+    dom = {};
 
 	function init() {
         trace = site.utilities && site.utilities.trace ? site.utilities.trace : {push: function() {}};
+        set();
     }
 
+    function set() {
+        dom.share = $( ".share" );
+        dom.share.each(function( ) {
+            
+            var btn = $(this);
+            var options = {};
+            options.title = btn.attr('data-title');
+            options.url = btn.attr('data-url');
+            options.desc = btn.attr('data-desc');
+            options.type = btn.attr('data-type');
 
+            btn.click(function() {
+                site.share.url(options);
+            });
+
+        });
+    }
     function url(options) {
 
 
@@ -81,6 +99,7 @@
 
 	site.share = {
 		url	: url,
+        set : set
 	};
 
 	$(function(){

@@ -45,7 +45,7 @@
     font-family: $headline-font;
     color: $color-headline;
     font-size:rem(48,$text-bp-sm);
-    margin:rem(50,$text-bp-sm) 0 rem(100,$text-bp-sm) rem(100,$text-bp-sm);
+    margin:rem(50,$text-bp-sm) 0 rem(50,$text-bp-sm) rem(100,$text-bp-sm);
 
     @include bp-medium {
         font-size:rem(36,$text-bp-md);
@@ -67,21 +67,26 @@
 
 .page-nav {
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
+    align-items:center;
+    clear:left;
+
     flex-direction:row;
     flex-wrap:nowrap;
+
+    font-family: $headline-font;
     
     text-align: center;
     font-size:rem(75,$text-bp-sm);
     margin:rem(30,$text-bp-sm); 
     @include bp-medium {
-        font-size:rem(36,$text-bp-md);
+        font-size:rem(24,$text-bp-md);
         margin:rem(20,$text-bp-md);
     }
 
     @include bp-large {
-        font-size:rem(40,$text-bp-lg);
-        margin:rem(20,$text-bp-lg);
+        font-size:rem(24,$text-bp-lg);
+        margin:rem(20,$text-bp-lg) rem(100,$text-bp-lg);
     }
     a {
         margin:rem(30,$text-bp-sm); 

@@ -1,7 +1,10 @@
 <div class="overlay">
-	<div class="close-btn">
-		<i class="fas fa-times"></i>
+	<div class="overlay-nav">
+		<div class="close-btn">
+			<i class="fas fa-times"></i>
+		</div>
 	</div>
+
 	
 	<div class="holder">
 		<div class="overlay-arrow left active">

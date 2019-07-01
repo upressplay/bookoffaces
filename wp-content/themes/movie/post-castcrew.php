@@ -1,20 +1,37 @@
-<div class="single">
+<div class="single-post-content">
+	
 	<?php if ( has_post_thumbnail() ) : ?>
-	<div class="featured-img"> 
 		<?php the_post_thumbnail('large'); ?>
-	</div> 
 	<?php endif; ?>
 	<div class="info">
-		<div class="title">
+		<h1 class="title">
 			<?php the_title(); ?>
+		</h1>
+
+		<div class="share-btns row">
+			<div class="share" data-type="facebook" data-title="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" data-desc="<?php echo get_the_excerpt($post->ID); ?>">
+				<span class="fab fa-facebook-square" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span> 
+			</div>
+			<div class="share" data-type="twitter" data-title="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" data-desc="<?php echo get_the_excerpt($post->ID); ?>">
+				<span class="fab fa-twitter-square" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span> 
+			</div>
 		</div>
 
-		<div class="date">
+		<h2 class="date">
 			<?php echo get_field('role'); ?>
-		</div>
+		</h2>
 
-		<div class="content">
+		<span class="content">
 			<?php the_content(); ?>
-		</div>
+		</span>
 	</div>
 </div><!-- single -->
+
+
+
+
+
+
+
+
+

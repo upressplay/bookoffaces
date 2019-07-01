@@ -28,6 +28,12 @@
 			if ( !empty( get_the_content() ) ) :
 				echo '<div id="synopsis">';
 				echo '<div class="holder">';
+
+				if ( has_post_thumbnail() ) {
+					echo '<a href="'.get_the_post_thumbnail_url($post->ID,'full').'" target="_blank">';
+					the_post_thumbnail('medium');
+					echo '</a>';
+				}
 		   		echo get_the_content($post->ID);
 		   		echo '</div>';
 		   		echo '</div>';

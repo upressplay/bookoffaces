@@ -157,7 +157,7 @@ header {
     font-size:rem(72,$text-bp-sm);
 
     @include bp-medium {
-        font-size:rem(36,$text-bp-md);
+        font-size:rem(80,$text-bp-md);
     }
 
     @include bp-large {
@@ -195,7 +195,7 @@ header {
     margin:rem(200,$text-bp-sm) 0 0 rem(240,$text-bp-sm);
 
     @include bp-medium {
-        margin:rem(150,$text-bp-md) 0 rem(50,$text-bp-md) rem(600,$text-bp-md);
+        margin:rem(300,$text-bp-md) 0 rem(50,$text-bp-md) rem(500,$text-bp-md);
     }
 
     @include bp-large {
@@ -210,7 +210,7 @@ header {
     background-repeat: no-repeat;
     background-position: top left;
     width: rem(750,$text-bp-sm);
-    height: rem(660,$text-bp-sm);
+    height: rem(450,$text-bp-sm);
 
     @include bp-medium {
         
