@@ -39,10 +39,28 @@
             font-size: rem(28,$text-bp-lg);
             line-height: rem(36,$text-bp-lg);
         }
-        img {
-            width:rem(220,$text-bp-lg);
+        .poster {
+
             float: left;
-            margin:0 rem(20,$text-bp-lg) rem(20,$text-bp-lg) 0;
+
+            width:rem(220,$text-bp-sm);
+            margin:0 rem(20,$text-bp-sm) rem(20,$text-bp-sm) 0;
+            border: rem(4,$text-bp-sm) solid transparent;
+
+            @include bp-medium {
+                width:rem(220,$text-bp-md);
+                margin:0 rem(20,$text-bp-md) rem(20,$text-bp-md) 0;
+                border: rem(4,$text-bp-md) solid transparent;
+            }
+
+            @include bp-large {
+                width:rem(250,$text-bp-lg);
+                margin:0 rem(30,$text-bp-lg) rem(20,$text-bp-lg) 0;
+                border: rem(4,$text-bp-lg) solid transparent;
+            }
+            &:hover {
+                border-color: #fff;
+            }
         }
         p {
             margin:0;

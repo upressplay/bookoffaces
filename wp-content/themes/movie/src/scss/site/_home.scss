@@ -114,7 +114,12 @@ header {
         margin-top: rem(100,$text-bp-lg);  
         font-size: rem(80,$text-bp-lg);
         line-height: rem(85,$text-bp-lg);
-    }   
+    } 
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        text-shadow: rem(1,$text-bp-lg) rem(1,$text-bp-lg) rem(40,$text-bp-lg) $color-red;
+        color: #fff;    
+    }  
 }
 
 .more-btn {

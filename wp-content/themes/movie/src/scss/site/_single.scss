@@ -1,18 +1,18 @@
 .single-post-content {
+    padding:rem(40,$text-bp-sm) rem(90,$text-bp-sm) rem(40,$text-bp-sm) rem(90,$text-bp-sm);
 
     @include bp-medium {
+        padding:rem(40,$text-bp-md) rem(100,$text-bp-md) rem(40,$text-bp-md) rem(100,$text-bp-md);
     }
 
     @include bp-large {
         padding:rem(40,$text-bp-lg) rem(100,$text-bp-lg) rem(40,$text-bp-lg) rem(100,$text-bp-lg);
     }
-    img {
-        float: left;
-    }
+
     .featured-img,
     img {
         float: left;
-        width: rem(700,$text-bp-sm);
+        width: rem(600,$text-bp-sm);
         height: initial;
         margin:0 rem(25,$text-bp-sm)  rem(40,$text-bp-sm) 0;
 

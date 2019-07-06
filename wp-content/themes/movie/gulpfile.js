@@ -136,7 +136,6 @@ function scss(){
 }
 
 function css(){
-	del(["css"]);
 	return gulp
 	.src('src/css/**/*.css')
 	.pipe(sourcemaps.init()) //initialize creating the sourcemap

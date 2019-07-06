@@ -30,7 +30,7 @@
 				echo '<div class="holder">';
 
 				if ( has_post_thumbnail() ) {
-					echo '<a href="'.get_the_post_thumbnail_url($post->ID,'full').'" target="_blank">';
+					echo '<a href="'.get_the_post_thumbnail_url($post->ID,'full').'" target="_blank" class="poster">';
 					the_post_thumbnail('medium');
 					echo '</a>';
 				}

@@ -441,7 +441,8 @@ header {
   color: #b40005;
   margin-top: 3rem;
   font-size: 4.5rem;
-  line-height: 3.6rem; }
+  line-height: 3.6rem;
+  transition: all 0.5s ease-in-out; }
   @media only screen and (min-width: 751px) {
     .site-title {
       margin-top: 10rem;
@@ -452,6 +453,9 @@ header {
       margin-top: 10rem;
       font-size: 8rem;
       line-height: 8.5rem; } }
+  .site-title:hover {
+    text-shadow: 0.1rem 0.1rem 4rem #b40005;
+    color: #fff; }
 
 .more-btn {
   font-family: "oldnewspapertypesregular", serif;
@@ -766,82 +770,93 @@ header {
         margin: 10rem;
         font-size: 2.8rem;
         line-height: 3.6rem; } }
-    #synopsis > .holder img {
-      width: 22rem;
+    #synopsis > .holder .poster {
       float: left;
-      margin: 0 2rem 2rem 0; }
+      width: 22rem;
+      margin: 0 2rem 2rem 0;
+      border: 0.4rem solid transparent; }
+      @media only screen and (min-width: 751px) {
+        #synopsis > .holder .poster {
+          width: 22rem;
+          margin: 0 2rem 2rem 0;
+          border: 0.4rem solid transparent; } }
+      @media only screen and (min-width: 1271px) {
+        #synopsis > .holder .poster {
+          width: 25rem;
+          margin: 0 3rem 2rem 0;
+          border: 0.4rem solid transparent; } }
+      #synopsis > .holder .poster:hover {
+        border-color: #fff; }
     #synopsis > .holder p {
       margin: 0; }
 
-@media only screen and (min-width: 1271px) {
-  .single-post-content {
-    padding: 4rem 10rem 4rem 10rem; } }
-
-.single-post-content img {
-  float: left; }
-
-.single-post-content .featured-img,
-.single-post-content img {
-  float: left;
-  width: 70rem;
-  height: initial;
-  margin: 0 2.5rem 4rem 0; }
+.single-post-content {
+  padding: 4rem 9rem 4rem 9rem; }
   @media only screen and (min-width: 751px) {
-    .single-post-content .featured-img,
-    .single-post-content img {
-      width: 80rem;
-      margin: 0 4rem 4rem 0; } }
+    .single-post-content {
+      padding: 4rem 10rem 4rem 10rem; } }
   @media only screen and (min-width: 1271px) {
-    .single-post-content .featured-img,
-    .single-post-content img {
-      width: 80rem;
-      margin: 0 4rem 4rem 0; } }
-
-.single-post-content .title {
-  font-family: "oldnewspapertypesregular", serif;
-  color: #fff;
-  font-size: 3.3rem;
-  line-height: 4rem;
-  margin-bottom: 2rem; }
-  @media only screen and (min-width: 751px) {
-    .single-post-content .title {
-      font-size: 4.4rem;
-      line-height: 4.8rem;
-      margin-bottom: 2rem; } }
-  @media only screen and (min-width: 1271px) {
-    .single-post-content .title {
-      font-size: 4.4rem;
-      line-height: 4.8rem;
-      margin-bottom: 2rem; } }
-
-.single-post-content .sub,
-.single-post-content .date {
-  font-family: "oldnewspapertypesregular", serif;
-  margin-bottom: 1.5rem; }
-  @media only screen and (min-width: 751px) {
-    .single-post-content .sub,
-    .single-post-content .date {
-      margin-bottom: 1.5rem; } }
-  @media only screen and (min-width: 1271px) {
-    .single-post-content .sub,
-    .single-post-content .date {
-      margin-bottom: 1.4rem; } }
-
-.single-post-content .content {
-  color: #fff;
-  font-size: 2.1rem;
-  line-height: 2.4rem;
-  margin-bottom: 2rem; }
-  @media only screen and (min-width: 751px) {
-    .single-post-content .content {
-      font-size: 1.8rem;
-      line-height: 2.1rem;
-      margin-bottom: 2rem; } }
-  @media only screen and (min-width: 1271px) {
-    .single-post-content .content {
-      font-size: 2.1rem;
-      line-height: 3rem;
-      margin-bottom: 2rem; } }
+    .single-post-content {
+      padding: 4rem 10rem 4rem 10rem; } }
+  .single-post-content .featured-img,
+  .single-post-content img {
+    float: left;
+    width: 60rem;
+    height: initial;
+    margin: 0 2.5rem 4rem 0; }
+    @media only screen and (min-width: 751px) {
+      .single-post-content .featured-img,
+      .single-post-content img {
+        width: 80rem;
+        margin: 0 4rem 4rem 0; } }
+    @media only screen and (min-width: 1271px) {
+      .single-post-content .featured-img,
+      .single-post-content img {
+        width: 80rem;
+        margin: 0 4rem 4rem 0; } }
+  .single-post-content .title {
+    font-family: "oldnewspapertypesregular", serif;
+    color: #fff;
+    font-size: 3.3rem;
+    line-height: 4rem;
+    margin-bottom: 2rem; }
+    @media only screen and (min-width: 751px) {
+      .single-post-content .title {
+        font-size: 4.4rem;
+        line-height: 4.8rem;
+        margin-bottom: 2rem; } }
+    @media only screen and (min-width: 1271px) {
+      .single-post-content .title {
+        font-size: 4.4rem;
+        line-height: 4.8rem;
+        margin-bottom: 2rem; } }
+  .single-post-content .sub,
+  .single-post-content .date {
+    font-family: "oldnewspapertypesregular", serif;
+    margin-bottom: 1.5rem; }
+    @media only screen and (min-width: 751px) {
+      .single-post-content .sub,
+      .single-post-content .date {
+        margin-bottom: 1.5rem; } }
+    @media only screen and (min-width: 1271px) {
+      .single-post-content .sub,
+      .single-post-content .date {
+        margin-bottom: 1.4rem; } }
+  .single-post-content .content {
+    color: #fff;
+    font-size: 2.1rem;
+    line-height: 2.4rem;
+    margin-bottom: 2rem; }
+    @media only screen and (min-width: 751px) {
+      .single-post-content .content {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        margin-bottom: 2rem; } }
+    @media only screen and (min-width: 1271px) {
+      .single-post-content .content {
+        font-size: 2.1rem;
+        line-height: 3rem;
+        margin-bottom: 2rem; } }
 
 .gallery {
   text-align: center;
