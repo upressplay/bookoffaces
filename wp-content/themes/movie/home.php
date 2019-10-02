@@ -64,7 +64,7 @@
 					$count = 0;
 					$args = array(
 					   'category_name'		=>'updates',
-					    'posts_per_page'	=> 10,
+					    'posts_per_page'	=> 20,
 						'orderby'			=> 'date',
 						'order'				=> 'DESC'
 					);
@@ -165,8 +165,9 @@
 					$count = 0;
 					$args = array(
 					   'category_name'		=>'photos',
-					    'posts_per_page'	=> 10,
-						'orderby'			=> 'date'
+					    'posts_per_page'	=> 20,
+						'orderby'			=> 'date',
+						'order'				=> 'DESC'
 					);
 					$query = new WP_Query( $args );
 					while ( $query->have_posts() ) : $query->the_post(); 
